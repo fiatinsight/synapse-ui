@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["andrew@fiatinsight.com"]
 
   spec.summary       = "Fiat Insight UI libraries"
-  spec.description   = "Fiat Insight UI libraries"
+  spec.description   = "This is a front end pack designed to be used by Fiat Insight developers on Rails and Jekyll projects."
   spec.homepage      = "https://github.com/fiatinsight/fiat-ui"
   spec.license       = "MIT"
 
