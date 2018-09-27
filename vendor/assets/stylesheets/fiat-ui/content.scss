@@ -1,0 +1,8 @@
+// Styles for smaller elements on pages
+
+.sheet {
+  background: $white;
+  &.padded {
+    padding: 30px;
+  }
+}

@@ -1,0 +1,110 @@
+// Top-level layout styling for large elements on pages
+
+header {
+  padding-top: 100px;
+  h1 {
+    font-size: 3rem;
+    color: $white;
+    bottom: 30px;
+    &.dark {
+      color: $dark_gray;
+    }
+  }
+  h3 {
+    font-size: 1.5rem;
+    color: $white;
+    font-weight: 300;
+    margin: 10px 0 0;
+    // border-left: 3px solid $light_gray;
+    padding: 0;
+    line-height: 1.3em;
+    .svg-inline--fa {
+      color: $white;
+      opacity: 0.5;
+    }
+    &.dark {
+      color: $dark_gray;
+      .svg-inline--fa {
+        color: $dark_gray;
+      }
+    }
+  }
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: $white;
+    margin-top: 30px;
+    padding: 0 30px;
+    opacity: 0.7;
+  }
+  .gradient {
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    -webkit-transform: rotate(-12deg);
+    transform: skewy(-12deg);
+    -webkit-transform-origin: 0;
+    transform-origin: 0;
+    position: absolute;
+    top: 0;
+    &.gray {
+      background: linear-gradient(150deg, #e1e6ff 15%, #f3f4f5 70%, #fff 94%);
+    }
+    &.blue {
+      background: linear-gradient(150deg, #6083fc 15%, #a7aeff 60%, #affcf4 98%);
+      :first-child {
+        width: 33.33333%;
+        left: -16.66666%;
+        background: #6c6cfb;
+      }
+      :nth-child(2) {
+        width: 33.33333%;
+        top: 0;
+        left: 16.66666%;
+        right: auto;
+        background: #737eff;
+      }
+      :nth-child(3) {
+        width: 33.33333%;
+        left: 49.99999%;
+        bottom: auto;
+        background: #6c6cfb;
+      }
+      :nth-child(4) {
+        width: 33.33333%;
+        top: 380px;
+        right: -16.66666%;
+        background: #afd4f8;;
+      }
+      :nth-child(5) {
+        width: 33.33333%;
+        bottom: 0;
+        background: #9191ff;
+      }
+    }
+    span {
+      height: 200px;
+      position: absolute;
+    }
+  }
+}
+
+.terminal {
+  background: $slate;
+  border-radius: 5px;
+  padding: 25px 40px;
+  p {
+    color: $light_gray;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    letter-spacing: 1px;
+  }
+  span {
+    color: $gray;
+    &.blue {
+      color: $light_blue;
+    }
+  }
+}
