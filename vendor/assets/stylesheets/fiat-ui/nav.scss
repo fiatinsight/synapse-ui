@@ -1,0 +1,25 @@
+// Navigation styling
+
+nav {
+  font-family: $body;
+  &.navbar {
+    z-index: 1;
+    background: transparent;
+    .navbar-brand {
+      color: $white;
+      font-size: 1.5rem;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $white;
+          font-size: 1.1rem;
+          font-weight: 300;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
