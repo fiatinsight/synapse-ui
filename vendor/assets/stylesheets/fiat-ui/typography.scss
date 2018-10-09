@@ -19,6 +19,12 @@ h6 {
   .svg-inline--fa {
     opacity: 0.5;
   }
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 
 h1 {
@@ -28,6 +34,11 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.6rem;
   margin-bottom: 1.5rem;
 }
 
@@ -41,4 +52,8 @@ h6 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+p {
+  font-family: $body;
 }

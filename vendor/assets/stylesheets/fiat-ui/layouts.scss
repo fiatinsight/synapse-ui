@@ -18,6 +18,7 @@ section {
     transform-origin: 0;
     position: absolute;
     top: 0;
+    z-index: -1;
     span {
       height: 180px;
       position: absolute;
@@ -82,13 +83,52 @@ section {
         background: #6c6cfb;
       }
       :nth-child(4) {
-        background: #afd4f8;;
+        background: #afd4f8;
       }
       :nth-child(5) {
         background: #9191ff;
       }
       :nth-child(6) {
         background: #a3a7ff;
+      }
+    }
+    &.teal {
+      background: linear-gradient(150deg, rgb(153,255,220) 15%, rgb(173,255,240) 60%, rgb(200,255,255) 98%);
+      :first-child {
+        background: rgb(145,253,218);
+      }
+      :nth-child(2) {
+        background: rgb(170,255,230);
+      }
+      :nth-child(3) {
+        background: rgb(145,253,218);
+      }
+      :nth-child(4) {
+        background: rgb(145,253,218);
+      }
+      :nth-child(5) {
+        background: rgb(145,253,218);
+      }
+      :nth-child(6) {
+        background: rgb(170,255,230);
+      }
+    }
+    &.pink {
+      background: linear-gradient(150deg, rgb(252,201,235) 15%, rgb(253,231,250) 70%, rgb(255,240,254) 94%);
+      :first-child {
+        background: rgb(253,195,230);
+      }
+      :nth-child(2) {
+        background: rgb(252,203,237);
+      }
+      :nth-child(3) {
+        background: rgb(253,195,230);
+      }
+      :nth-child(4) {
+        background: rgb(252,203,237);
+      }
+      :nth-child(5) {
+        background: rgb(252,203,237);
       }
     }
   }

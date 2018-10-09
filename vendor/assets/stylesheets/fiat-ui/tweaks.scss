@@ -1,9 +1,32 @@
 // Tweakable style aspects
 
+// Backgrounds
+
 .bg-light-gray {
   background: $light_gray !important;
 }
 
+.bg-dark-gray {
+  background: $dark_gray !important;
+  color: $white !important;
+}
+
 .bg-blue {
   background: $blue !important;
+  color: $white !important;
+}
+
+.bg-pink {
+  background: $pink !important;
+  color: $white !important;
+}
+
+// Text
+
+.text-brown {
+  color: $brown !important;
+}
+
+.text-pink {
+  color: $pink !important;
 }

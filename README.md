@@ -1,4 +1,4 @@
-# FiatUI
+# Fiat UI
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fiat-ui`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -25,6 +25,10 @@ Include everything by importing the main stylesheet in `application.scss`: `@imp
 ## Using with Jekyll
 
 Copy the contents of `vendor/assets/stylesheets` into your Jekyll site's `_sass` folder. You can include each file uniquely in your master `.scss`: e.g., `@import "fiat-ui/variables";`. Or you can create a file like `_sass/fiat-ui.scss` that refers to other individual files within a `_sass/fiat-ui` folder, and then call the main file in your master `.scss` file.
+
+## Customizations
+
+You can override variables and styles by including your own `project_name-variables.scss` and `project_name-styles.scss` files. Variables should be loaded _before_ the Fiat UI package. (Included variables are set using the `!default` flag, which means they'll only take effect if there's not a previous variable with the same name.) Styles should be added _after_ the Fiat UI package.
 
 ## Development
 
