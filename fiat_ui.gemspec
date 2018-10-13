@@ -3,7 +3,7 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "fiat_ui/version"
 
-Gem::sification.new do |s|
+Gem::Specification.new do |s|
   s.name          = "fiat_ui"
   s.version       = FiatUi::VERSION
   s.authors       = ["Andrew Haines"]
