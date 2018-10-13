@@ -1,6 +1,6 @@
 # Fiat UI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fiat-ui`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fiat_ui`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fiat-ui'
+gem 'fiat_ui'
 ```
 
 And then execute:
@@ -18,13 +18,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fiat-ui
+    $ gem install fiat_ui
 
-Include everything by importing the main stylesheet in `application.scss`: `@import "fiat-ui";`. Or you can include individual sheets by calling them directly: e.g., `@import "fiat-ui/variables";`.
+Include everything by importing the main stylesheet in `application.scss`: `@import "fiat_ui";`. Or you can include individual sheets by calling them directly: e.g., `@import "fiat_ui/variables";`.
 
 ## Using with Jekyll
 
-Copy the contents of `vendor/assets/stylesheets` into your Jekyll site's `_sass` folder. You can include each file uniquely in your master `.scss`: e.g., `@import "fiat-ui/variables";`. Or you can create a file like `_sass/fiat-ui.scss` that refers to other individual files within a `_sass/fiat-ui` folder, and then call the main file in your master `.scss` file.
+Copy the contents of `vendor/assets/stylesheets` into your Jekyll site's `_sass` folder. You can include each file uniquely in your master `.scss`: e.g., `@import "fiat_ui/variables";`. Or you can create a file like `_sass/fiat_ui.scss` that refers to other individual files within a `_sass/fiat_ui` folder, and then call the main file in your master `.scss` file.
 
 ## Customizations
 
@@ -36,7 +36,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/fiatinsight/fiat-ui.
+Bug reports and pull requests are welcome on GitHub at https://github.com/fiatinsight/fiat_ui.
 
 ## License
 
