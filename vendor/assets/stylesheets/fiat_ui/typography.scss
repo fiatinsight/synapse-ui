@@ -57,3 +57,50 @@ h6 {
 p {
   font-family: $body;
 }
+
+.desc {
+  padding: 20px;
+  background: $blue_gray;
+  margin: 20px 0;
+  border-radius: 5px;
+  position: relative;
+  &.red {
+    background: $light_red;
+    color: $red;
+  }
+  &.yellow {
+    background: $gold;
+    color: $dark_gray;
+  }
+  &.green {
+    background: $green;
+    color: $white;
+  }
+  a {
+    color: $black;
+    border-bottom: 2px solid $gray;
+    &:hover:not(.btn) {
+      color: $charcoal;
+      border-bottom: 2px solid $charcoal;
+    }
+  }
+}
+
+.flash {
+  padding: 10px;
+  margin: 0;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  &.notice {
+    background: $blue;
+    color: $white;
+  }
+  &.alert {
+    background: $red;
+    color: $white;
+  }
+  &.svg-inline--fade {
+    opacity: 0;
+  }
+}

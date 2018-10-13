@@ -4,10 +4,32 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: $body;
+}
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: $blue;
 }
 
 section {
   position: relative;
+  &.page {
+    flex: 1;
+  }
+  .billboard {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .mask {
+      h1 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
   .diagonals {
     width: 100%;
     height: 100%;
@@ -131,6 +153,24 @@ section {
         background: rgb(252,203,237);
       }
     }
+    &.black {
+      background: linear-gradient(150deg, rgb(20,20,20) 15%, rgb(253,231,250) 70%, rgb(255,240,254) 94%);
+      :first-child {
+        background: rgb(253,195,230);
+      }
+      :nth-child(2) {
+        background: rgb(252,203,237);
+      }
+      :nth-child(3) {
+        background: rgb(253,195,230);
+      }
+      :nth-child(4) {
+        background: rgb(252,203,237);
+      }
+      :nth-child(5) {
+        background: rgb(252,203,237);
+      }
+    }
   }
 }
 
@@ -142,6 +182,10 @@ header {
 }
 
 .footer {
+  font-family: $body;
+  z-index: 5;
   background: $light_gray;
-
+  p {
+    color: $gray;
+  }
 }

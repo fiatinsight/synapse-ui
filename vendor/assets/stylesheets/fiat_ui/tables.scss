@@ -1,0 +1,104 @@
+.table {
+	font-family: $body;
+	&.list {
+		margin-bottom: 0;
+		tr {
+			background: $blue_gray;
+			transition: all 0.1s ease-in-out;
+			font-size: 0.9rem;
+			&:not(:last-child) {
+				border-bottom: 1px solid $light_gray;
+			}
+			&.table-active > td {
+				background-color: $light_gray;
+			}
+			&:hover {
+				background: $blue_gray;
+			}
+			th {
+				padding: 10px 20px;
+				background: $light_gray;
+				border-bottom: 1px solid $gray;
+				border: none;
+			}
+			td {
+				padding: 10px 20px;
+				// background: $white;
+				border-top: none;
+				.form-group {
+					margin: 0;
+				}
+				a {
+					color: $dark_gray;
+					border-bottom: 1px solid $light_gray;
+					&:hover {
+						text-decoration: none;
+						border-bottom: 1px solid $gray;
+					}
+				}
+			}
+		}
+		.btn {
+			padding: 3px 5px;
+			margin: 0;
+			font-size: .8em;
+			&.btn-warning {
+				border: 2px solid $light_gray;
+				background: $light_gray;
+				color: $dark_gray;
+				&:hover {
+					border: 2px solid $yellow;
+					background: $yellow;
+				}
+			}
+			&.btn-success {
+				border: 2px solid $light_gray;
+				background: $light_gray;
+				color: $dark_gray;
+				&:hover {
+					border: 2px solid $green;
+					background: $green;
+					color: $white;
+				}
+			}
+			&.btn-danger {
+				border: 2px solid $light_gray;
+				background: $light_gray;
+				color: $dark_gray;
+				&:hover {
+					border: 2px solid $red;
+					background: $red;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	.table {
+		&.list {
+			tr {
+				display: block;
+				padding: 20px 0;
+				th {
+					display: none;
+				}
+				td {
+					display: block;
+					padding: 2px 20px;
+					font-size: 0.9rem;
+					color: $gray;
+					&.primary {
+						font-weight: 700;
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+  background-color: $blue_gray;
+}

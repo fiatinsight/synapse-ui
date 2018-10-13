@@ -32,7 +32,8 @@
     border: 1px solid transparent;
     color: $dark_gray;
     font-weight: bold;
-    &:hover {
+    &:hover,
+    &.active {
       background: $light_gray;
       border: 1px solid $light_gray;
       text-decoration: none;

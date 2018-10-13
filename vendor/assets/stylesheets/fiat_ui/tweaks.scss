@@ -2,6 +2,10 @@
 
 // Backgrounds
 
+.bg-white {
+  background: $white !important;
+}
+
 .bg-light-gray {
   background: $light_gray !important;
 }
@@ -11,8 +15,18 @@
   color: $white !important;
 }
 
+.bg-charcoal {
+  background: $charcoal !important;
+  color: $white !important;
+}
+
 .bg-blue {
   background: $blue !important;
+  color: $white !important;
+}
+
+.bg-green {
+  background: $green !important;
   color: $white !important;
 }
 
