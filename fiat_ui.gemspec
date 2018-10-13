@@ -23,11 +23,11 @@ Gem::Specification.new do |s|
   #     "public gem pushes."
   # end
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  # s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  # s.files         = `git ls-files -z`.split("\x0").reject do |f|
-  #   f.match(%r{^(test|s|features)/})
-  # end
+  s.files         = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|s|features)/})
+  end
 
   s.bindir        = "exe"
   s.executables   = s.files.grep(%r{^exe/}) { |f| File.basename(f) }
