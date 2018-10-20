@@ -52,3 +52,32 @@ trix-editor {
     width: 100%;
   }
 }
+
+.cms.editor {
+  form {
+    #article_slug,
+    #article_excerpt,
+    #page_slug,
+    #page_excerpt {
+      font-size: 0.8rem;
+      border: 1px solid $light_gray;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    #article_title,
+    #page_title {
+      background: transparent;
+      font-size: 3rem;
+      border: none;
+    }
+    trix-editor {
+      padding: 30px 20px;
+      margin-bottom: 20px;
+      border: none;
+    }
+  }
+  .primary {
+    background: $white;
+    padding: 30px;
+  }
+}
