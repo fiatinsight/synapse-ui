@@ -20,11 +20,20 @@ Or install it yourself as:
 
     $ gem install fiat_ui
 
-Include everything by importing the main stylesheet in `application.scss`: `@import "fiat_ui";`. Or you can include individual sheets by calling them directly: e.g., `@import "fiat_ui/variables";`.
+Include all CSS by importing the main stylesheet in `application.scss`: `@import "fiat_ui";`. Or you can include individual sheets by calling them directly: e.g., `@import "fiat_ui/variables";`.
+
+Include JavaScript files in your `application.js` file. For example:
+
+```ruby
+//= require fa-v4-shims.min
+//= require fontawesome-all.min
+```
 
 ## Using with Jekyll
 
 Copy the contents of `vendor/assets/stylesheets` into your Jekyll site's `_sass` folder. You can include each file uniquely in your master `.scss`: e.g., `@import "fiat_ui/variables";`. Or you can create a file like `_sass/fiat_ui.scss` that refers to other individual files within a `_sass/fiat_ui` folder, and then call the main file in your master `.scss` file.
+
+Copy the contents of `vendor/assets/javascripts` into your Jekyll site and call them as usual.
 
 ## Customizations
 
