@@ -3,6 +3,11 @@
     max-width: 600px;
     margin-top: 100px;
     background: $blue_gray;
+    pointer-events: all;
+    .modal-content {
+      background: transparent;
+      border: none;
+    }
     .modal-header {
       position: relative;
       border: none;
