@@ -29,6 +29,8 @@
     .modal-dialog {
       .modal-body {
         padding: 50px 30px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
       }
     }
   }
