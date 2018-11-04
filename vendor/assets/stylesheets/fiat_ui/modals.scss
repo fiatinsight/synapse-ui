@@ -23,3 +23,13 @@
     }
   }
 }
+
+@include media-breakpoint-down(xs) {
+  .modal {
+    .modal-dialog {
+      .modal-body {
+        padding: 50px 30px;
+      }
+    }
+  }
+}
