@@ -83,7 +83,8 @@
 			}
 			tr {
 				display: block;
-				padding: 5px 0;
+				padding: 7px 0;
+				background: transparent;
 				th {
 					display: none;
 				}
@@ -91,7 +92,7 @@
 					display: block;
 					padding: 0 20px;
 					font-size: 0.85rem;
-					color: $gray;
+					color: $charcoal;
 					&.primary {
 						font-weight: 700;
 						font-size: 1rem;
