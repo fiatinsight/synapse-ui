@@ -5,6 +5,7 @@ nav {
   &.navbar {
     z-index: 5;
     background: transparent;
+    border-radius: 0;
     .navbar-brand {
       color: $white;
       font-size: 1.5rem;
