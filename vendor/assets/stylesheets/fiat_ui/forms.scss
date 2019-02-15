@@ -37,7 +37,7 @@ form {
 }
 
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.5rem + 2px); // This is a Firefox hack
+  height: calc(2.6rem + 2px); // This is a Firefox hack
 }
 
 trix-editor {
