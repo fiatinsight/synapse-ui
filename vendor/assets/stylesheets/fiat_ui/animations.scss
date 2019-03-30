@@ -1,0 +1,29 @@
+.shiftable {
+  transition: all 1s ease-in-out;
+  &.up-50 {
+    margin-top: -50px;
+  }
+  &.up-100 {
+    margin-top: -100px;
+  }
+  &.up-200 {
+    margin-top: -200px;
+  }
+  &.up-300 {
+    margin-top: -300px;
+  }
+  &.right-100 {
+    margin-right: -100px;
+  }
+  &.left-100 {
+    margin-left: -100px;
+  }
+}
+
+.revealable {
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+}
