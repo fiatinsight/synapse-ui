@@ -19,6 +19,9 @@
     &.white {
       background: rgba(255,255,255,0.9);
     }
+    &.dark {
+      background: rgba(0,0,0,0.5);
+    }
   }
 }
 
@@ -34,6 +37,12 @@
     margin: 10px 0 0;
     padding: 0;
     line-height: 1.3em;
+    a {
+      &:hover {
+        color: inherit;
+        border: none;
+      }
+    }
   }
   h5 {
     font-size: 0.8rem;
@@ -103,7 +112,7 @@
     color: $light_gray;
     margin: 0;
     font-size: 0.8rem;
-    line-height: 1.3rem;
+    line-height: 1.4rem;
     letter-spacing: 1px;
   }
   span {
