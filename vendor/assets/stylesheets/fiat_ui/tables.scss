@@ -73,6 +73,36 @@
 			}
 		}
 	}
+	&.minimal {
+		margin-bottom: 0;
+		tr {
+			background: transparent;
+			transition: all 0.1s ease-in-out;
+			font-size: 1rem;
+			// &:not(:last-child) {
+			// 	border-bottom: 1px solid $light_gray;
+			// }
+			&.table-active > td {
+				background-color: transparent;
+			}
+			// &:hover {
+			// 	background: $blue_gray;
+			// }
+			th {
+				padding: 10px 20px;
+				background: transparent;
+				border: none;
+			}
+			td {
+				padding: .5rem 1rem;
+				background: transparent;
+				border-top: none;
+				.form-group {
+					margin: 0;
+				}
+			}
+		}
+	}
 }
 
 @include media-breakpoint-down(xs) {
