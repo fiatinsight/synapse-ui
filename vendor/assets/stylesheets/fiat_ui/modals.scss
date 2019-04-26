@@ -1,5 +1,11 @@
 .modal {
   .modal-dialog {
+    &.w-80 {
+      max-width: 80%;
+    }
+    &.w-100 {
+      max-width: 100%;
+    }
     max-width: 600px;
     margin-top: 100px;
     background: $white;
