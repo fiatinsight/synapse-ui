@@ -181,6 +181,15 @@ header {
   }
 }
 
+.filter {
+  &.white {
+    background: rgba(255,255,255,0.9);
+  }
+  &.dark {
+    background: rgba(0,0,0,0.5);
+  }
+}
+
 .footer {
   font-family: $body;
   z-index: 5;
