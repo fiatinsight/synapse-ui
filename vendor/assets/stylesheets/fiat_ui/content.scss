@@ -187,3 +187,29 @@
     font-size: 100px;
   }
 }
+
+.card-header {
+  background: $off_white;
+  &.green {
+    background: $green;
+  }
+}
+
+.badge {
+  background: transparent;
+  &.badge-light {
+    background: transparent;
+    font-weight: normal;
+    color: $dark_gray;
+    border: 1px solid $light_gray;
+  }
+  &.badge-secondary {
+    background: $gray;
+  }
+  &.badge-success {
+    background: $green;
+  }
+  &.badge-warning {
+    background: $yellow;
+  }
+}
