@@ -212,4 +212,10 @@
   &.badge-warning {
     background: $yellow;
   }
+  &.badge-danger {
+    background: $red;
+  }
+  &.badge-primary {
+    background: $blue;
+  }
 }
