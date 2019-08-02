@@ -103,6 +103,13 @@
 			}
 		}
 	}
+	.bg-danger {
+		background: $red;
+		color: $white;
+	}
+	.bg-warning {
+		background: $yellow;
+	}
 }
 
 @include media-breakpoint-down(xs) {
