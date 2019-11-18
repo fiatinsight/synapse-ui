@@ -1,0 +1,28 @@
+<% title ||= false %>
+<% header ||= false %>
+<% columns ||= [] %>
+<% paginate ||= false %>
+<% per_page ||= 25 %>
+<% namespace ||= nil %>
+<% cache_status ||= false %>
+<% cache_scope ||= "#{controller_path}/#{action_name}" %>
+<% cache_expire ||= false %>
+<% style ||= nil %>
+
+<% if paginate %>
+  <% items = items.paginate(page: params[:page], per_page: per_page) %>
+<% end %>
+
+<% if title %>
+  <h6><%= title %></h6>
+<% end %>
+<div class="table-responsive">
+  <table class="table <%= style %>">
+    <%= render partial: 'layouts/fiat_ui/components/tables/header', locals: { header: header, columns: columns } %>
+    <%= render partial: 'layouts/fiat_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace } %>
+  </table>
+</div>
+
+<% if paginate %>
+  <%= will_paginate items.paginate(page: params[:page], per_page: per_page) %>
+<% end %>
