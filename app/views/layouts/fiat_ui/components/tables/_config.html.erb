@@ -1,0 +1,26 @@
+<% title ||= false # Sets the title display to false unless it's explicitly included %>
+<% header ||= false # Sets the header display to false unless it's explicitly included %>
+<% columns ||= false %>
+<% paginate ||= false # Sets the pagination to false unless it's explicitly included %>
+<% per_page ||= 25 # Sets the pagination number to 25 unless it's explicitly included %>
+<% cache_status ||= false # Sets caching to false unless it's explicitly included %>
+<% cache_scope ||= "#{controller_path}/#{action_name}" # Sets the cache scope unless it's explicitly included %>
+<% namespace ||= nil %>
+
+<% if paginate %>
+  <% items = items.paginate(page: params[:page], per_page: per_page) %>
+<% end %>
+
+<% if title %>
+  <h6><%= title %></h6>
+<% end %>
+<div class="table-responsive">
+  <table class="table minimal">
+    <%= render partial: 'layouts/components/table_list/header', locals: { header: header, columns: columns } %>
+    <%= render partial: 'layouts/components/table_list/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, namespace: namespace } %>
+  </table>
+</div>
+
+<% if paginate %>
+  <%= will_paginate items.paginate(page: params[:page], per_page: per_page) %>
+<% end %>

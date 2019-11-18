@@ -1,5 +1,5 @@
-require "fiat_ui/version"
+require "fiat_ui/engine"
 
 module FiatUi
-  class Engine < ::Rails::Engine; end
+  # class Engine < ::Rails::Engine; end
 end
