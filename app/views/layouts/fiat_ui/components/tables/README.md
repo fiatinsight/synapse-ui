@@ -31,3 +31,5 @@ render partial: 'layouts/fiat_ui/components/tables/config', locals: { header: fa
 `cache_expire`: Sets cache expiration using Ruby time helpers, e.g., `1.hour`. Defaults to `false` unless declared.
 
 `style`: Include classes to pass into the `table` element. Defaults to `false` unless something is included.
+
+`variables`: Pass anything else you like for use in your template. For example: `variables: { color: 'red', account: Current.account }` Then retrieve them by calling `variables[:color]` or `variables[:account]`.

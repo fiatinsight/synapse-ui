@@ -8,6 +8,7 @@
 <% cache_scope ||= "#{controller_path}/#{action_name}" %>
 <% cache_expire ||= false %>
 <% style ||= nil %>
+<% variables ||= nil %>
 
 <% if paginate %>
   <% items = items.paginate(page: params[:page], per_page: per_page) %>
@@ -18,8 +19,8 @@
 <% end %>
 <div class="table-responsive">
   <table class="table <%= style %>">
-    <%= render partial: 'layouts/fiat_ui/components/tables/header', locals: { header: header, columns: columns } %>
-    <%= render partial: 'layouts/fiat_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace } %>
+    <%= render partial: 'layouts/fiat_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables } %>
+    <%= render partial: 'layouts/fiat_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, variables: variables } %>
   </table>
 </div>
 
