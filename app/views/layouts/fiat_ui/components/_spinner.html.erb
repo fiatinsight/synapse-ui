@@ -1,3 +1,5 @@
-<div class="spinner">
-	<i class="fal fa-spinner-third fa-spin"></i>
+<% color ||= 'light' %>
+<% icon ||= 'fal fa-spinner-third' %>
+<div class="spinner <%= color %>">
+	<i class="<%= icon %> fa-spin"></i>
 </div>

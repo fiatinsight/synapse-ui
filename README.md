@@ -118,12 +118,12 @@ Also in the above example, `flash[:alert]` is reserved for a normal alert messag
 A [spinner](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_spinner.html.erb) is available to use for page loads, transitions, etc. To include it in your app, load the following partial in your layout template:
 
 ```ruby
-= render 'layouts/fiat_ui/components/spinner'
+= render partial: 'layouts/fiat_ui/components/spinner', locals: { color: 'light', icon: 'fal fa-spinner-third' }
 ```
 
-You can also include a custom spinner template by wrapping your own HTML with the `spinner` class, instead.
+This accepts variables for `color` and `icon`. By default, color is set to `light`, but can also be `dark`. The `icon` variable is `fal fa-spinner-third` by default, but can be any fully qualified Font Awesome icon.
 
-Then adjust the following to work with your `application.js` file:
+To display the spinner, adjust the following to work with your `application.js` file:
 
 ```javascript
 // Show spinner during Turbolinks loads
@@ -150,6 +150,8 @@ $(document).on('turbolinks:load', function() {
   });
 });
 ```
+
+If you want to create a custom spinner template, instead, you can do so by wrapping your own HTML with the `spinner` class.
 
 ### Tables
 
