@@ -67,6 +67,16 @@ An [alerts](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts
 
 This picks up the value of both `flash[:alert]` and `flash[:notice]` and renders them in the view.
 
+Alerts are styled using the `#alert` and `.flash` selectors. By default, they're designed to appear at the top of a page and to persist. However, you can optionally fade them by including something like the following in your `application.js` file:
+
+```javascript
+$(document).on('turbolinks:load', function() {
+  setTimeout(function(){
+    $("#alert").addClass("fade");
+  }, 4000);
+});
+```
+
 ### Errors
 
 An [errors](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_errors.html.erb) module is available to handle information passed to `flash[:errors]`. To use it, include the following in your layout template:
