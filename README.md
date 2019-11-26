@@ -22,9 +22,7 @@ Or install it yourself with:
 
 You can use parts of this library for Jekyll sites by copying the contents of `vendor/assets/stylesheets` into your site's `_sass` folder. You can include each file uniquely in your master `.scss`: e.g., `@import "fiat_ui/variables";`. Or you can create a file like `_sass/fiat_ui.scss` that refers to other individual files within a `_sass/fiat_ui` folder, and then call the main file in your master `.scss` file. (Note: You'll need to also compile the Bootstrap `.scss` files before you load `fiat_ui`. You cannot use pre-compiled Bootstrap files.) To include JavaScript, copy the contents of `vendor/assets/javascripts` into your Jekyll site and call them as usual.
 
-## Features
-
-### Styles
+## Styles
 
 Stylesheets assume using the latest Bootstrap, and should be loaded after it. For example:
 
@@ -42,9 +40,9 @@ You can override style variables by including your own `project_name-variables.s
 @import "project_name-styles";
 ```
 
-### JavaScript
+## JavaScript
 
-#### Font Awesome
+### Font Awesome
 
 To include Font Awesome, `require` the following in your `application.js` file:
 
@@ -55,11 +53,11 @@ To include Font Awesome, `require` the following in your `application.js` file:
 
 > Legal Notice: Font Awesome is included in this gem under Fiat's [Font Awesome Pro License](https://fontawesome.com/license). Users not covered by Fiat's license (i.e., "non-Creators" as designated by Font Awesome) are _not_ hereby authorized to use licensed materials. Inclusion of Font Awesome scripts in this gem is not designed to distribute permissions to non-Creators, nor does it constitute a standalone copy of any licensed materials.
 
-### Components
+## Components
 
 Some integrated components are also included to make it easier to build common utilities and workflows.
 
-#### Alerts
+### Alerts
 
 An [alerts](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_alerts.html.erb) module to handle `flash` notifications is available by loading:
 
@@ -69,7 +67,7 @@ An [alerts](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts
 
 This picks up the value of both `flash[:alert]` and `flash[:notice]` and renders them in the view.
 
-#### Errors
+### Errors
 
 An [errors](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_errors.html.erb) module is available to handle information passed to `flash[:errors]`. To use it, include the following in your layout template:
 
@@ -105,7 +103,7 @@ Also in the above example, `flash[:alert]` is reserved for a normal alert messag
 = f.input :field_one, input_html: { value: params[:field_one] }
 ```
 
-#### Spinner
+### Spinner
 
 A [spinner](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_spinner.html.erb) is available to use for page loads, transitions, etc. To include it in your app, load the following partial in your layout template:
 
@@ -143,7 +141,7 @@ $(document).on('turbolinks:load', function() {
 });
 ```
 
-#### Tables
+### Tables
 
 A [table](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/tables/_config.html.erb) generator is available for creating advanced, flexible tables. To invoke, include the following in your view:
 
