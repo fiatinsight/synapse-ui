@@ -7,14 +7,20 @@ form {
       margin-bottom: 1rem;
       padding: 0.5rem 1rem;
     }
+    // label {
+    //   font-weight: bold;
+    //   margin-left: 0.75rem;
+    // }
     label {
-      font-weight: bold;
-      margin-left: 0.75rem;
+      color: $gray;
+      font-weight: normal;
+      margin-left: 0;
     }
-    input:not([type="checkbox"]) {
+    input:not([type="checkbox"]),
+    select {
       width: 100%;
-      // padding: 0.75rem 1rem;
-      // border: 1px solid $light_gray;
+      border: none;
+      background: $white;
       border-radius: 5px;
       margin-bottom: 1.5rem;
     }
