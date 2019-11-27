@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "will_paginate"
   s.add_dependency "meta-tags"
-  # s.add_dependency "sitemap_generator"
+  s.add_dependency "sitemap_generator"
 
   s.add_development_dependency "bundler", "~> 1.16"
   s.add_development_dependency "rake", "~> 10.0"

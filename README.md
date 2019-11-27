@@ -137,6 +137,10 @@ Meta tags are enabled via the `meta-tags` gem dependency. Run `rails generate me
 
 You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
+### Sitemaps
+
+Sitemaps can be configured via the `sitemap_generator` gem dependency. Read the full setup documentation [here](https://github.com/kjvarga/sitemap_generator).
+
 ### Spinner
 
 A [spinner](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_spinner.html.erb) is available to use for page loads, transitions, etc. To include it in your app, load the following partial in your layout template:
