@@ -8,15 +8,14 @@ This gem is designed to provide baseline UI for Rails projects at Fiat Insight.
 
 ### Rails
 
-Add this line to your application's Gemfile:
+Add this to your application's Gemfile:
 
 ```ruby
-gem 'fiat_ui'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem 'fiat_ui', github: 'fiatinsight/fiat_ui'
 ```
 
-Or install it yourself with:
-
-    $ gem install fiat_ui
+> For stable release with older applications using this gem prior to November 2019, include `ref: 93628761a50e0553d77ee563ed52062c5c070333` in the gem dependency.
 
 ### Jekyll
 
