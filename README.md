@@ -81,6 +81,16 @@ $(document).on('turbolinks:load', function() {
 });
 ```
 
+### Analytics
+
+A [Google Analytics tracking script](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_analytics.html.erb) is supplied. You can include it in the `head` section of your main template file by calling:
+
+```ruby
+= render partial: 'layouts/fiat_ui/components/analytics', locals: { tracking_id: "UA-12345678-9"}
+```
+
+Make sure to replace the `tracking_id` variable with yours from Google.
+
 ### Errors
 
 An [errors](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_errors.html.erb) module is available to handle information passed to `flash[:errors]`. To use it, include the following in your layout template:
@@ -116,6 +126,16 @@ Also in the above example, `flash[:alert]` is reserved for a normal alert messag
 ```ruby
 = f.input :field_one, input_html: { value: params[:field_one] }
 ```
+
+### Meta tags
+
+Meta tags are enabled via the `meta-tags` gem dependency. Run `rails generate meta_tags:install` to create a config initializer. Then include something like this in your main template file:
+
+```ruby
+= display_meta_tags site: site_name, description: description, image_src: image, twitter: { card: "summary_large_image", site: "@username", creator: "@username" }, og: { title: site_name, type: 'website', image: image, description: description }
+```
+
+You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
 ### Spinner
 
