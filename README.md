@@ -20,7 +20,11 @@ Or install it yourself with:
 
 ### Jekyll
 
-You can use parts of this library for Jekyll sites by copying the contents of `vendor/assets/stylesheets` into your site's `_sass` folder. You can include each file uniquely in your master `.scss`: e.g., `@import "fiat_ui/variables";`. Or you can create a file like `_sass/fiat_ui.scss` that refers to other individual files within a `_sass/fiat_ui` folder, and then call the main file in your master `.scss` file. (Note: You'll need to also compile the Bootstrap `.scss` files before you load `fiat_ui`. You cannot use pre-compiled Bootstrap files.) To include JavaScript, copy the contents of `vendor/assets/javascripts` into your Jekyll site and call them as usual.
+You can use parts of this library for Jekyll sites.
+- Copy the contents of `vendor/assets/stylesheets` into your site's `_sass` folder.
+- Include each file uniquely in your master `.scss` (e.g., `@import "fiat_ui/variables";`); or you can create a file like `_sass/fiat_ui.scss` that refers to other individual files within a `_sass/fiat_ui` folder, and then call the main file in your master `.scss` file.
+- Compile Bootstrap `.scss` files before you load `fiat_ui`. (You cannot use pre-compiled Bootstrap files.)
+- Include JavaScript by copying the contents of `vendor/assets/javascripts` into your Jekyll site and calling them as usual.
 
 ## Styles
 
