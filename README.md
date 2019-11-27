@@ -89,7 +89,7 @@ A [Google Analytics tracking script](https://github.com/fiatinsight/fiat_ui/blob
 = render partial: 'layouts/fiat_ui/components/analytics', locals: { tracking_id: "UA-12345678-9"}
 ```
 
-Make sure to replace the `tracking_id` variable with yours from Google.
+Make sure to replace the `tracking_id` variable with yours from Google. Setting the value to `nil` will bypass the script loading.
 
 ### Errors
 
