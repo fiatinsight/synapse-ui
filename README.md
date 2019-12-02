@@ -1,6 +1,6 @@
 # Fiat UI
 
-This gem is designed to provide baseline UI for Rails projects at Fiat Insight.
+This gem is designed to provide baseline UI for Rails projects at [@fiatinsight](https://github.com/fiatinsight/).
 
 > Currently installed on [Tekne](https://github.com/fiatinsight/tekne/), [Parish.es](https://github.com/fiatinsight/parish-app), [Cleveland Mixer](https://github.com/fiatinsight/cleveland-mixer/), [CatholicStock](https://github.com/fiatinsight/catholic-stock/), [Ethika Politika](https://github.com/fiatinsight/ethika-politika/), [BrokrQuotes](https://github.com/fiatinsight/brokrquotes/), and others.
 
