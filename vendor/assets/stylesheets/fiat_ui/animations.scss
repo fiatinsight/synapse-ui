@@ -1,3 +1,14 @@
+.revealable {
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+  &.hide {
+    opacity: 0; // NOTE: This is for resetting the visibility of an element without having to remove the .revealable class
+  }
+}
+
 .shiftable {
   transition: all 1s ease-in-out;
   &.up-50 {
@@ -12,21 +23,40 @@
   &.up-300 {
     margin-top: -300px;
   }
+  &.down-50 {
+    margin-bottom: -50px;
+  }
+  &.down-100 {
+    margin-bottom: -100px;
+  }
+  &.down-200 {
+    margin-bottom: -200px;
+  }
+  &.down-300 {
+    margin-bottom: -300px;
+  }
+  &.right-50 {
+    margin-right: -50px;
+  }
   &.right-100 {
     margin-right: -100px;
   }
   &.right-200 {
     margin-right: -200px;
   }
+  &.right-300 {
+    margin-right: -300px;
+  }
+  &.left-50 {
+    margin-left: -50px;
+  }
   &.left-100 {
     margin-left: -100px;
   }
-}
-
-.revealable {
-  transition: all 1s ease-in-out;
-  opacity: 0;
-  &.show {
-    opacity: 1;
+  &.left-200 {
+    margin-left: -200px;
+  }
+  &.left-300 {
+    margin-left: -300px;
   }
 }
