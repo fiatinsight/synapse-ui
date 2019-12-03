@@ -4,7 +4,14 @@
   padding: 0.6rem 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  &.btn-round {
+  // Shapes
+  &.square {
+    border-radius: 0
+  }
+  &.round {
+    border-radius: 6rem;
+  }
+  &.btn-round { // TODO: Deprecate?
     width: 2rem;
     height: 2rem;
     text-align: center;
@@ -13,6 +20,7 @@
     line-height: 1.85rem; // This accounts for FontAwesome icons 'sliding' down
     border-radius: 50%;
   }
+  // Colors
   &.btn-primary {
     background: $blue;
     border: 1px solid $blue;
@@ -43,8 +51,15 @@
       text-decoration: none;
     }
   }
-}
-
-.bg-success {
-  background-color: $green !important;
+  &.slide {
+    transition: all .3s ease-in-out;
+    &:hover {
+      padding-left: 1rem;
+      .svg-inline--fa.revealable.hide {
+        opacity: 1;
+        width: 0.9rem;
+        margin-right: .5rem;
+      }
+    }
+  }
 }

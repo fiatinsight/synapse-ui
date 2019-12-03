@@ -1,11 +1,17 @@
 .revealable {
-  transition: all 1s ease-in-out;
+  transition: all .5s ease-in-out;
   opacity: 0;
   &.show {
     opacity: 1;
   }
   &.hide {
     opacity: 0; // NOTE: This is for resetting the visibility of an element without having to remove the .revealable class
+  }
+  &.shrink-width {
+    width: 0;
+  }
+  &.shrink-height {
+    width: 0;
   }
 }
 
