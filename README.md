@@ -27,12 +27,49 @@ You can use parts of this library for Jekyll sites.
 
 ## Styles
 
-Stylesheets assume using the latest Bootstrap, and should be loaded after it. For example:
+### Dependencies
+
+Stylesheets depend on the latest Bootstrap, and should be loaded after it:
 
 ```ruby
 @import "bootstrap";
 @import "fiat_ui";
 ```
+
+### Approach / philosophy
+
+**Simpler decisions**
+
+This library is designed to extend the power of Bootstrap, not to infringe on it. Even if you're great a leveraging Bootstrap directly, relying on some additional, component-based conventions can help to dramatically speed up routine decision making throughout your design.
+
+**Functionality first**
+
+Sheets are divided up (for the most part) into components. All the styles in a component-based sheet pertain _especially_ to that component &mdash; although maybe not _exclusively_. Other sheets are purely functional, for example, `animations.scss`. If a style doesn't fit into one of those categories, it's not included.
+
+**Consistency in customization**
+
+Most apps utilize many of the same UI components. This library allows you to adopt a global convention where it makes sense (e.g., off-the-shelf table styling), but also to easily override conventions when required. Additionally, it offers quite a few Bootstrap-inspired, granular selectors to enable significant, on-the-fly customizations directly within your HTML.
+
+### Sheets
+
+You can load all stylesheets in your app by calling `@import "fiat_ui"`. Or you can load individual sheets by calling, for example, `@import "fiat_ui/buttons"`.
+
+The following sheets are available for inclusion:
+
+- [animations.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/animations.scss)
+- [buttons.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/buttons.scss)
+- [content.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/content.scss)
+- [forms.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/forms.scss)
+- [layouts.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/layouts.scss)
+- [material.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/material.scss)
+- [modals.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/modals.scss)
+- [nav.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/nav.scss)
+- [tables.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/tables.scss)
+- [tweaks.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/tweaks.scss)
+- [typography.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/typography.scss)
+- [variables.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/variables.scss)
+
+### Customization
 
 You can override style variables by including your own `project_name-variables.scss` and `project_name-styles.scss` files. Variables should be loaded _before_ the Fiat UI package. (Included variables are set using the `!default` flag, which means they'll only take effect if there's not a previous variable with the same name.) Styles should be added _after_ the Fiat UI package. For example:
 
