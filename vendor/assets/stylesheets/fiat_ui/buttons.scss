@@ -52,6 +52,8 @@
     }
   }
   &.slide {
+    // Slides button text right; works well with a hidden left-hand icon
+    // EXAMPLE: <a href="/contact" class="btn btn-primary slide"><i class="far fa-arrow-right revealable hide shrink-width"></i>Contact us</a>
     transition: all .3s ease-in-out;
     &:hover {
       padding-left: 1rem;
