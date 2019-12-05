@@ -1,0 +1,15 @@
+<% placeholder ||= 'Search' %>
+<% filter_types ||= false %>
+<%= form_with url: send(url), method: :get, data: { remote: false }, html: { class: "form keyword-search" } do |f| %>
+  <div class="input-group">
+    <%= f.text_field :q, placeholder: placeholder, class: "form-control keyword-search" %>
+    <% if filter_types %>
+      <select class="custom-select form-control rounded-0" name="filter_type">
+        <% filter_types.each do |i| %>
+          <option value=<%= i[0] %>><%= i[1] %></option>
+        <% end %>
+      </select>
+    <% end %>
+    <button type="submit" class="btn btn-link m-0 p-0 px-3"><i class="fal fa-search"></i></button>
+  </div>
+<% end %>

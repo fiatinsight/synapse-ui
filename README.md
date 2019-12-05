@@ -173,6 +173,50 @@ Meta tags are enabled via the `meta-tags` gem dependency. Run `rails generate me
 
 You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
+### Search
+
+Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_spinner.html.erb):
+
+```ruby
+= render partial: 'layouts/fiat_ui/components/search-keyword', locals: { url: 'search_everything_path', placeholder: 'Search', filter_types: [ ['organization', 'Organizations'], ['user', 'Users'] ] }
+```
+
+You  can pass the following variables into the `locals`:
+
+- `url`: Required to route requests within your application.
+
+- `placeholder`: A placeholder for the keyword search field; defaults to `Search`.
+
+- `filter_types`: Optionally include an array of values and names to be used via a filters dropdown. This allows passing extra information into your controller for complex searches.
+
+Handling search requests and responses can be done as usual. For example, you could set up the path `search_everything_path` by putting the following in your `routes.rb` file:
+
+```ruby
+get :search_everything, controller: :search
+```
+
+And creating the controller:
+
+```ruby
+class SearchController < ApplicationController
+  def search_everything
+    @record_type = params[:filter_type]
+
+    if @record_type == 'organization'
+      q = Organization.order("name ASC").ransack(name_downcase_cont_any: params[:q].downcase).result
+    elsif @record_type == 'user'
+      q = User.order("lastname ASC").ransack(username_or_email_or_lastname_or_firstname_cont_any: params[:q]).result
+    end
+
+    @results = q.to_a.uniq
+
+    respond_to do |format|
+      format.html {}
+    end
+  end
+end
+```
+
 ### Sitemaps
 
 Sitemaps can be configured via the `sitemap_generator` gem dependency. Read the full setup documentation [here](https://github.com/kjvarga/sitemap_generator).
