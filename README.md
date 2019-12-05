@@ -175,7 +175,7 @@ You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
 ### Search
 
-Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_spinner.html.erb):
+Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_search-keyword.html.erb):
 
 ```ruby
 = render partial: 'layouts/fiat_ui/components/search-keyword', locals: { url: 'search_everything_path', placeholder: 'Search', filter_types: [ ['organization', 'Organizations'], ['user', 'Users'] ] }
