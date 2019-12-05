@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "will_paginate"
+  s.add_dependency "ransack"
   s.add_dependency "meta-tags"
   s.add_dependency "sitemap_generator"
 
