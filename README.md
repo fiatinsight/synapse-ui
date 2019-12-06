@@ -175,6 +175,10 @@ You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
 ### Navigation
 
+Responsive navigation is available. It includes a [navbar](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/nav/_navbar.html.erb) partial and a fly-out / modal-driven [menu](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/nav/_nav-modal.html.erb).
+
+To install the navbar, add the following to your template:
+
 ```ruby
 navbar_locals = {
           classes: 'fixed-top bg-transparent pt-3',
@@ -190,6 +194,18 @@ navbar_locals = {
 = render partial: 'layouts/fiat_ui/components/nav/navbar', locals: navbar_locals
 ```
 
+You can pass the following variables to `locals` (N.B. they all default to `false` when not included):
+
+- `classes`: Classes for your navbar wrapper, e.g., `fixed-top` and/or `layer-0`.
+- `image`: An image you want to display in the logo section.
+- `title`: A title you want to display in the logo section if an image isn't included.
+- `links`: Top level links for your navbar, including name, path, and an icon (optional).
+
+<% mobile_button_classes ||= false %>
+<% menu_icon ||= false %>
+<% menu_title ||= false %>
+<% display_menu_title_mobile ||= false %>
+
 ### Search
 
 Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_search-keyword.html.erb):
@@ -198,7 +214,7 @@ Search with [ransack](https://github.com/activerecord-hackery/ransack) can be co
 = render partial: 'layouts/fiat_ui/components/search-keyword', locals: { url: 'search_everything_path', placeholder: 'Search', filter_types: [ ['organization', 'Organizations'], ['user', 'Users'] ] }
 ```
 
-You  can pass the following variables into the `locals`:
+You can pass the following variables into the `locals`:
 
 - `url`: Required to route requests within your application.
 

@@ -180,7 +180,7 @@ nav {
     left: initial;
   }
   .close {
-    color: $blue;
+    color: $dark_gray;
     opacity: 1;
     font-size: 30px;
     background: transparent;
@@ -195,14 +195,14 @@ nav {
       color: #000;
       border-radius: 0;
       &:hover {
-        background: $blue;
+        background: $charcoal;
         color: #fff;
       }
     }
   }
   h6 {
     font-size: 24px;
-    color: $blue;
+    color: $charcoal;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -213,11 +213,12 @@ nav {
     border-top: 1px solid #ddd;
   }
   .nav-link {
-    color: $yellow;
+    color: $charcoal;
     font-size: 1.5rem;
     display: grid;
     &:hover {
-      color: $red;
+      color: $blue;
+      border: none;
     }
     &.float-right {
       display: inline-block;
@@ -245,10 +246,10 @@ nav {
   margin-top: 0;
   padding-top: 0;
   .dropdown-item {
-    font-size: 18px;
+    font-size: 1.5rem;
     color: $yellow;
     &:hover {
-      color: $red;
+      color: $blue;
       background: transparent;
     }
   }

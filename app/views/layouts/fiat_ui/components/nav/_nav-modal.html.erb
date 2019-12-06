@@ -18,11 +18,11 @@
           <ul id="menu-full" class="nav navbar-nav mt-5 mb-3 border-bottom">
             <% if sections %>
               <% sections.each do |s| %>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown py-3">
                   <% if s[2] %>
-                    <a href="#" class="nav-link float-right" data-toggle="dropdown"><i class="fas fa-caret-circle-down"></i><i class="fas fa-caret-circle-up"></i></a>
+                    <a href="#" class="nav-link float-right ml-3" data-toggle="dropdown"><i class="fas fa-caret-circle-down"></i><i class="fas fa-caret-circle-up"></i></a>
                   <% end %>
-                  <%= link_to send(s[1]), class: 'nav-link' do %><%= s[0] %><% end %>
+                  <%= link_to send(s[1]), class: 'nav-link text-right' do %><%= s[0] %><% end %>
                   <% if s[2] %>
                     <div class="dropdown-menu">
                       <% s[2].each do |i| %>
