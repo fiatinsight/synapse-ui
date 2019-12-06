@@ -20,13 +20,13 @@
               <% sections.each do |s| %>
                 <li class="nav-item dropdown py-3">
                   <% if s[2] %>
-                    <a href="#" class="nav-link float-right ml-3" data-toggle="dropdown"><i class="fas fa-caret-circle-down"></i><i class="fas fa-caret-circle-up"></i></a>
+                    <a href="#" class="nav-link float-right ml-3" data-toggle="dropdown"><i class="fal fa-caret-circle-down"></i><i class="fas fa-caret-circle-up"></i></a>
                   <% end %>
                   <%= link_to send(s[1]), class: 'nav-link text-right' do %><%= s[0] %><% end %>
                   <% if s[2] %>
                     <div class="dropdown-menu">
                       <% s[2].each do |i| %>
-                        <%= link_to send(i[1]), class: 'dropdown-item' do %><%= i[0] %><% end %>
+                        <%= link_to send(i[1]), class: 'dropdown-item text-right' do %><%= i[0] %><% end %>
                       <% end %>
                     </div>
                   <% end %>

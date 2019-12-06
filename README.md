@@ -181,16 +181,16 @@ To install the navbar, add the following to your template:
 
 ```ruby
 navbar_locals = {
-          classes: 'fixed-top bg-transparent pt-3',
-          mobile_button_classes: 'px-3 py-2 bg-pink layer-2',
-          menu_icon: 'fal fa-arrow-left mr-2',
-          menu_title: 'Go',
-          display_menu_title_mobile: false,
-          links: [
-            ['Test','root_path','fal fa-users'],
-            ['Another','root_path','fal fa-users'],
-            ],
-          }
+  classes: 'fixed-top bg-transparent pt-3',
+  mobile_button_classes: 'px-3 py-2 bg-pink layer-2',
+  menu_icon: 'fal fa-arrow-left mr-2',
+  menu_title: 'Go',
+  display_menu_title_mobile: false,
+  links: [
+    ['Test','root_path','fal fa-users'],
+    ['Another','root_path','fal fa-users'],
+    ],
+  }
 = render partial: 'layouts/fiat_ui/components/nav/navbar', locals: navbar_locals
 ```
 
@@ -200,11 +200,35 @@ You can pass the following variables to `locals` (N.B. they all default to `fals
 - `image`: An image you want to display in the logo section.
 - `title`: A title you want to display in the logo section if an image isn't included.
 - `links`: Top level links for your navbar, including name, path, and an icon (optional).
+- `menu_icon`: The Font Awesome icon that'll show on your menu button.
+- `menu_title`: A title for your menu button.
+- `menu_button_classes`: Classes for your menu button on non-mobile.
+- `mobile_menu_icon`: The Font Awesome icon that'll show on your menu button.
+- `mobile_menu_title`: A title for your menu button.
+- `mobile_menu_button_classes`: Classes for your menu button on mobile.
 
-<% mobile_button_classes ||= false %>
-<% menu_icon ||= false %>
-<% menu_title ||= false %>
-<% display_menu_title_mobile ||= false %>
+To include the menu modal, add the following to your template (probably just below your navbar partial):
+
+```ruby
+nav_modal_locals = {
+  image: 'https://s3.amazonaws.com/bucket-name/image.png',
+  sections: [
+    ['Sign In', 'new_user_session_path'],
+    ['Company', 'root_path', [
+      # Begin items
+      ['About','about_path'],
+      ['Our Work','portfolio_path']
+      ]], # end items and section
+    ['Contact','contact_path']
+    ] # end all sections
+  }
+= render partial: 'layouts/fiat_ui/components/nav/nav-modal', locals: nav_modal_locals
+```
+
+You can pass the following variables to `locals`:
+
+- `image`: An image to display above your menu list.
+- `sections`: The content of your menu; this is structured as a section with a title and link path (optional) with any sub-items, each including a title and link path.
 
 ### Search
 
