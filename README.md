@@ -212,6 +212,7 @@ To include the menu modal, add the following to your template (probably just bel
 ```ruby
 nav_modal_locals = {
   image: 'https://s3.amazonaws.com/bucket-name/image.png',
+  image_width_percentage: 60,
   sections: [
     ['Sign In', 'new_user_session_path'],
     ['Company', 'root_path', [
@@ -228,6 +229,7 @@ nav_modal_locals = {
 You can pass the following variables to `locals`:
 
 - `image`: An image to display above your menu list.
+- `image_width_percentage`: Specify what percent of the modal column the image should occupy (defaults to `50`).
 - `sections`: The content of your menu; this is structured as a section with a title and link path (optional) with any sub-items, each including a title and link path.
 
 ### Search

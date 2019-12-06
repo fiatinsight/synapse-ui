@@ -1,4 +1,5 @@
 <% image ||= false %>
+<% image_width_percentage ||= 50 %>
 <% sections ||= false %>
 <div id="menu" class="modal fade modal-full" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="d-block fixed-top mt-4 mr-4 mt-lg-5 mr-lg-5 close-wrapper">
@@ -10,7 +11,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-          <a href="#"><% if image %><img src="<%= image %>"/><% elsif title && display_menu_title_mobile %><%= title %><% end %></a>
+          <% if image %><img src="<%= image %>" width="<%= image_width_percentage %>%"/><% elsif title && display_menu_title_mobile %><%= title %><% end %>
         </div>
       </div>
       <div class="row justify-content-center" id="menuCollapse">
