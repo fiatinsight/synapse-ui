@@ -1,0 +1,38 @@
+<% classes ||= false %>
+<% mobile_button_classes ||= false %>
+<% image ||= false %>
+<% title ||= false %>
+<% links ||= false %>
+<% menu_icon ||= false %>
+<% menu_title ||= false %>
+<% display_menu_title_mobile ||= false %>
+<nav id="main-nav" class="navbar navbar-expand-md <% if classes %><%= classes %><% end %>">
+  <div class="container d-block">
+    <div class="row no-gutters">
+      <div class="col-lg-3 col-md-4 col-8">
+        <a class="navbar-brand" href="#"><% if image %><img src="<%= image %>"  class="navbar-image"/><% elsif title && display_menu_title_mobile %><%= title %><% end %></a>
+      </div>
+      <div class="col-4 d-md-none align-self-center">
+        <button class="navbar-toggler navbar-toggler-right float-right d-flex d-sm-none <% if mobile_button_classes %><%= mobile_button_classes %><% end %>" type="button" data-toggle="modal" data-target="#menu" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <% if menu_icon %><i class="<%= menu_icon %>"></i><% if menu_title %><%= menu_title %><% end %><% end %>
+        </button>
+      </div>
+      <div class="col-lg-9 col-md-8 align-self-center">
+        <div class="collapse navbar-collapse" id="mainNav">
+          <div class="ml-auto">
+            <ul class="nav navbar-nav">
+              <% if links %>
+                <% links.each do |i| %>
+                  <li class="nav-item"><%= link_to send(i[1]), class: 'nav-link' do %><% if i[2] %><i class="<%= i[2] %> mr-2"></i><% end %><%= i[0] %><% end %></li>
+                <% end %>
+              <% end %>
+              <% if menu_icon || menu_title %>
+                <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#menu"><% if menu_icon %><i class="<%= menu_icon %>"></i><% if menu_title %><%= menu_title %><% end %><% end %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

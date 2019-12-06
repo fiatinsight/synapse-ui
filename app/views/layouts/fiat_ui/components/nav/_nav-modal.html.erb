@@ -1,0 +1,41 @@
+<% image ||= false %>
+<% sections ||= false %>
+<div id="menu" class="modal fade modal-full" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="d-block fixed-top mt-4 mr-4 mt-lg-5 mr-lg-5 close-wrapper">
+    <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+      <i class="fas fa-times-circle"></i>
+    </button>
+  </div>
+  <div class="py-5 modal-dialog">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <a href="#"><% if image %><img src="<%= image %>"/><% elsif title && display_menu_title_mobile %><%= title %><% end %></a>
+        </div>
+      </div>
+      <div class="row justify-content-center" id="menuCollapse">
+        <div class="col-md-8 text-left">
+          <ul id="menu-full" class="nav navbar-nav mt-5 mb-3 border-bottom">
+            <% if sections %>
+              <% sections.each do |s| %>
+                <li class="nav-item dropdown">
+                  <% if s[2] %>
+                    <a href="#" class="nav-link float-right" data-toggle="dropdown"><i class="fas fa-caret-circle-down"></i><i class="fas fa-caret-circle-up"></i></a>
+                  <% end %>
+                  <%= link_to send(s[1]), class: 'nav-link' do %><%= s[0] %><% end %>
+                  <% if s[2] %>
+                    <div class="dropdown-menu">
+                      <% s[2].each do |i| %>
+                        <%= link_to send(i[1]), class: 'dropdown-item' do %><%= i[0] %><% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

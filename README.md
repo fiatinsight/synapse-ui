@@ -173,6 +173,23 @@ Meta tags are enabled via the `meta-tags` gem dependency. Run `rails generate me
 
 You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
+### Navigation
+
+```ruby
+navbar_locals = {
+          classes: 'fixed-top bg-transparent pt-3',
+          mobile_button_classes: 'px-3 py-2 bg-pink layer-2',
+          menu_icon: 'fal fa-arrow-left mr-2',
+          menu_title: 'Go',
+          display_menu_title_mobile: false,
+          links: [
+            ['Test','root_path','fal fa-users'],
+            ['Another','root_path','fal fa-users'],
+            ],
+          }
+= render partial: 'layouts/fiat_ui/components/nav/navbar', locals: navbar_locals
+```
+
 ### Search
 
 Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_search-keyword.html.erb):

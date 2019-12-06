@@ -7,12 +7,19 @@ nav {
     background: transparent;
     border-radius: 0;
     .navbar-brand {
-      color: $white;
+      color: $charcoal;
       font-size: 1.5rem;
       font-weight: bold;
       &:hover {
         border: none;
       }
+      .navbar-image {
+        max-height: 50px;
+      }
+    }
+    .navbar-toggler {
+      border: 1px solid $light_gray;
+      color: $charcoal;
     }
     .navbar-nav {
       .nav-item {
@@ -123,5 +130,150 @@ nav {
         }
       }
     }
+  }
+}
+
+// #main-nav {
+//   .nav-item {
+//     font-size: 16px;
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     .nav-link {
+//       color: $yellow;
+//       padding-right: 2em;
+//       padding-left: 2em;
+//       border-right: 1px solid #ddd;
+//       &:hover {
+//         background: $red;
+//         color: $white;
+//       }
+//     }
+//     &:last-of-type {
+//       .nav-link {
+//         border-right: 0;
+//       }
+//     }
+//   }
+// }
+
+.modal-full {
+  background: $white;
+  right: 0;
+  left: inherit;
+  width: 50%;
+  .modal-dialog {
+    margin: 0 auto !important;
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
+    max-width: 1140px !important;
+    .modal-content {
+      background: transparent;
+      border: none;
+      height: 100%;
+    }
+  }
+  p {
+    color: #fff;
+  }
+  .close-wrapper {
+    left: initial;
+  }
+  .close {
+    color: $blue;
+    opacity: 1;
+    font-size: 30px;
+    background: transparent;
+    text-shadow: none;
+    &:hover {
+      color: $red;
+    }
+  }
+  .list-group {
+    font-weight: 300;
+    a {
+      color: #000;
+      border-radius: 0;
+      &:hover {
+        background: $blue;
+        color: #fff;
+      }
+    }
+  }
+  h6 {
+    font-size: 24px;
+    color: $blue;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+#menu {
+  .nav-item {
+    border-top: 1px solid #ddd;
+  }
+  .nav-link {
+    color: $yellow;
+    font-size: 1.5rem;
+    display: grid;
+    &:hover {
+      color: $red;
+    }
+    &.float-right {
+      display: inline-block;
+    }
+    .fa-caret-circle-up {
+      display: none;
+    }
+    &[aria-expanded=true] {
+      .fa-caret-circle-down {
+        display: none;
+      }
+      .fa-caret-circle-up {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.dropdown-menu.show {
+  position: relative !important;
+  transform: none !important;
+  will-change: initial !important;
+  background: transparent;
+  border: none;
+  margin-top: 0;
+  padding-top: 0;
+  .dropdown-item {
+    font-size: 18px;
+    color: $yellow;
+    &:hover {
+      color: $red;
+      background: transparent;
+    }
+  }
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  #main-nav .nav-item .nav-link {
+    border-right: none;
+  }
+  .modal-full {
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-full {
+    right: 0;
+    left: 0;
+    width: 100%;
   }
 }
