@@ -9,6 +9,8 @@
 <% cache_expire ||= false %>
 <% style ||= nil %>
 <% variables ||= nil %>
+<% data_controller ||= nil %>
+<% data_action ||= nil %>
 
 <% if paginate %>
   <% items = items.paginate(page: params[:page], per_page: per_page) %>
@@ -18,7 +20,7 @@
   <h6><%= title %></h6>
 <% end %>
 <div class="table-responsive">
-  <table class="table <%= style %>">
+  <table class="table <%= style %>" <% if data_controller %>data-controller="<%= data_controller %>"<% end %> <% if data_action %>data-action="<%= data_action %>"<% end %>>
     <%= render partial: 'layouts/fiat_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables } %>
     <%= render partial: 'layouts/fiat_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, variables: variables } %>
   </table>

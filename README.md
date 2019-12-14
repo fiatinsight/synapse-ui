@@ -173,6 +173,14 @@ Meta tags are enabled via the `meta-tags` gem dependency. Run `rails generate me
 
 You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
+### Modals
+
+You can include [modals](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/modals). Invoke them by using:
+
+```ruby
+= render partial: 'layouts/fiat_ui/components/modals/small-modal'
+```
+
 ### Navigation
 
 Responsive navigation is available. It includes a [navbar](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/nav/_navbar.html.erb) partial and a fly-out / modal-driven [menu](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/nav/_nav-modal.html.erb).
@@ -353,6 +361,10 @@ You  can pass the following variables into the `locals`:
 - `cache_expire`: Sets cache expiration using Ruby time helpers, e.g., `1.hour`. Defaults to `false` unless declared.
 
 - `style`: Include classes to pass into the `table` element. Defaults to `false` unless something is included.
+
+- `data_controller`: Include a controller for Stimulus actions, e.g., `drag-table-row`.
+
+- `data_action`: Include any actions for a Stimulus controller separated by a single space. For example: `dragstart->drag-table-row#dragstart dragover->drag-table-row#dragover`.
 
 - `variables`: Pass anything else you like for use in your template. For example: `variables: { color: 'red', account: Current.account }` Then retrieve them by calling `variables[:color]` or `variables[:account]`. Defaults to `nil` unless included.
 
