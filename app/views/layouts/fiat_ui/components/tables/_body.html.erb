@@ -1,4 +1,4 @@
-<tbody>
+<tbody class="" <% if data_url %>data-url="<%= data_url %>"<% end %>>
   <% if items.any? %>
     <% items.each do |i| %>
       <% if cache_scope && cache_status %>

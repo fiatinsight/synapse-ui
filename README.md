@@ -366,6 +366,8 @@ You  can pass the following variables into the `locals`:
 
 - `data_action`: Include any actions for a Stimulus controller separated by a single space. For example: `dragstart->drag-table-row#dragstart dragover->drag-table-row#dragover`.
 
+- `data_url`: Include a data URL attribute for handling things (maybe in JavaScript). (Note: This is included in the table layout twice, both at the `table` element as well as in the `tbody` element. This is designed to allow flexibility for actions you might want to take that depend on this value.)
+
 - `variables`: Pass anything else you like for use in your template. For example: `variables: { color: 'red', account: Current.account }` Then retrieve them by calling `variables[:color]` or `variables[:account]`. Defaults to `nil` unless included.
 
 ## Development
