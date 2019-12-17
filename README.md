@@ -74,6 +74,7 @@ The following sheets are available for inclusion:
 You can override style variables by including your own `project_name-variables.scss` and `project_name-styles.scss` files. Variables should be loaded _before_ the Fiat UI package. (Included variables are set using the `!default` flag, which means they'll only take effect if there's not a previous variable with the same name.) Styles should be added _after_ the Fiat UI package. For example:
 
 ```ruby
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap');
 @import "bootstrap";
 @import "project_name-variables";
 @import "fiat_ui";
@@ -92,6 +93,8 @@ To include Font Awesome, `require` the following in your `application.js` file:
 ```
 
 > Legal Notice: Font Awesome is included in this gem under Fiat's [Font Awesome Pro License](https://fontawesome.com/license). Users not covered by Fiat's license (i.e., "non-Creators" as designated by Font Awesome) are _not_ hereby authorized to use licensed materials. Inclusion of Font Awesome scripts in this gem is not designed to distribute permissions to non-Creators, nor does it constitute a standalone copy of any licensed materials.
+
+> Note: If you're not using the assets pipeline for JavaScript, you'll still need to include `app/assets/javascripts/application.js` for this, and call it in your template with `javascript_include_tag` in your header. Make sure it loads after you invoke jQuery.
 
 ## Components
 
