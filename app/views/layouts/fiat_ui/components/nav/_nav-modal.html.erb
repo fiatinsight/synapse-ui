@@ -27,7 +27,7 @@
                   <% if s[2] %>
                     <div class="dropdown-menu">
                       <% s[2].each do |i| %>
-                        <%= link_to send(i[1]), class: 'dropdown-item text-right' do %><%= i[0] %><% end %>
+                        <%= link_to send(i[1]), method: i[2], class: 'dropdown-item text-right' do %><%= i[0] %><% end %>
                       <% end %>
                     </div>
                   <% end %>
