@@ -3,18 +3,14 @@
 form {
   font-family: $body;
   .form-group {
-    .form-control {
+    .form-control,
+    .custom-control { // For Bootstrap custom forms: https://getbootstrap.com/docs/4.0/components/forms/#custom-forms
       margin-bottom: 1rem;
-      padding: 0.75rem 1rem;
-      &.is-valid {
+      &.is-valid,
+      .is-valid {
         background-image: none;
-        // border-color: inherit;
       }
     }
-    // label {
-    //   font-weight: bold;
-    //   margin-left: 0.75rem;
-    // }
     label {
       color: $gray;
       font-weight: normal;
@@ -24,6 +20,7 @@ form {
     input:not([type="radio"]),
     textarea,
     select.form-control {
+      padding: 0.5rem 1rem;
       width: 100%;
       border: none;
       background: $light_gray;
@@ -32,13 +29,18 @@ form {
     }
     input[type="radio"] {
       margin-bottom: 0;
-      margin-right: 0.5rem;
+      margin-right: 0.75rem;
+      font-size: 1rem;
+      color: $gray;
     }
     input[type="checkbox"] {
       padding: 0.75rem 1rem;
       margin-top: 2rem;
       margin-right: 0.75rem;
       margin-bottom: 1.5rem;
+    }
+    select.form-control {
+      padding: 0.5rem;
     }
     abbr[title],
     abbr[data-original-title] {
@@ -49,11 +51,28 @@ form {
       padding: 0 1rem;
       color: $gray;
     }
+    // For Bootstrap custom form validations: https://getbootstrap.com/docs/4.0/components/forms/#custom-forms
+    .custom-control-input:checked ~ .custom-control-label::before {
+      color: $gray;
+      border-color: $dark_gray;
+      background-color: $dark_gray;
+    }
+    .custom-control-input.is-valid ~ .custom-control-label {
+      color: $gray;
+    }
+    .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+      border-color: $dark_gray;
+      background-color: $dark_gray;
+    }
+    .custom-control-input.is-valid ~ .custom-control-label::before {
+      border-color: $gray;
+    }
   }
 }
 
-select.form-control:not([size]):not([multiple]) {
-  height: calc(2.6rem + 2px); // This is a Firefox hack
+select.form-control:not([size]):not([multiple]),
+input[type="date"] {
+  height: calc(2.3rem + 2px); // This is a Firefox hack
 }
 
 trix-editor {
