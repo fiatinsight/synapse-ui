@@ -80,6 +80,12 @@ trix-editor {
   margin-bottom: 1rem;
 }
 
+trix-toolbar {
+  .trix-button-row {
+    flex-wrap: wrap;
+  }
+}
+
 .live_search {
   input[type="text"] {
     padding: 0.5rem 1rem;
