@@ -225,17 +225,25 @@ nav_modal_locals = {
   image: 'https://s3.amazonaws.com/bucket-name/image.png',
   image_width_percentage: 60,
   sections: [
-    ['Company', 'root_path', [
-      # Begin items
-      ['About','about_path'],
-      ['Our Work','portfolio_path']
-      ]], # end items and section
-    ['Contact','contact_path'],
-    ['My Account', 'new_user_session_path', [
-      # Begin items
-      ['Dashboard','user_path'],
-      ['Log Out','destroy_user_session_path','delete'],
-      ]] # end items and section
+    {
+      title: 'Company',
+      path: 'root_path',
+      icon: 'far fa-home mr-2'
+    },
+    {
+      title: 'Services',
+      path: 'services_path',
+      items: [
+        {
+          title: 'Design',
+          path: 'design_path'
+        },
+        {
+          title: 'Support',
+          path: 'support_path'
+        }
+      ]
+    }
     ] # end all sections
   }
 = render partial: 'layouts/fiat_ui/components/nav/nav-modal', locals: nav_modal_locals
@@ -245,7 +253,7 @@ You can pass the following variables to `locals`:
 
 - `image`: An image to display above your menu list.
 - `image_width_percentage`: Specify what percent of the modal column the image should occupy (defaults to `50`).
-- `sections`: The content of your menu; this is structured as a section with a title and link path (optional) with any sub-items, each including a title, link path, and method (optional; defaults to `get`).
+- `sections`: The content of your menu; this is structured as a section with a title, link path, path variable (optional), icon, and any sub-items, each including a title, link path, variable, icon, and method (optional; defaults to `get`).
 
 ### Search
 
