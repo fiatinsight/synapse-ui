@@ -1,0 +1,22 @@
+{
+  "name": "fiat_ui",
+  "version": "0.0.1",
+  "description": "testing...",
+  "main": "",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiatinsight/fiat_ui.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
