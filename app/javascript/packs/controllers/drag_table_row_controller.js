@@ -1,5 +1,7 @@
 // Based on: https://johnbeatty.co/2018/03/09/stimulus-js-tutorial-how-do-i-drag-and-drop-items-in-a-list/
 
+console.log("FiatUIDragTableRowController.js")
+
 import { Controller } from "stimulus"
 export default class extends Controller {
   connect() {
