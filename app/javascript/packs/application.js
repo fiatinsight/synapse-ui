@@ -1,1 +1,1 @@
-console.log("FiatUIApplication.js")
+console.log("SynapseUiApplication.js")

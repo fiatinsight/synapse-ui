@@ -22,8 +22,8 @@
 <% end %>
 <div class="table-responsive">
   <table class="table <%= style %>" <% if data_controller %>data-controller="<%= data_controller %>"<% end %> <% if data_action %>data-action="<%= data_action %>"<% end %> <% if data_url %>data-url="<%= data_url %>"<% end %>>
-    <%= render partial: 'layouts/fiat_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables } %>
-    <%= render partial: 'layouts/fiat_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, data_url: data_url, variables: variables } %>
+    <%= render partial: 'layouts/synapse_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables } %>
+    <%= render partial: 'layouts/synapse_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, data_url: data_url, variables: variables } %>
   </table>
 </div>
 

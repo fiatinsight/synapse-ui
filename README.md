@@ -12,7 +12,7 @@ Add this to your application's Gemfile:
 
 ```ruby
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'fiat_ui', github: 'fiatinsight/fiat_ui'
+gem 'synapse_ui', github: 'fiatinsight/synapse_ui'
 ```
 
 > For stable release with older applications using this gem prior to November 2019, include `ref: 93628761a50e0553d77ee563ed52062c5c070333` in the gem dependency.
@@ -21,8 +21,8 @@ gem 'fiat_ui', github: 'fiatinsight/fiat_ui'
 
 You can use parts of this library for Jekyll sites.
 - Copy the contents of `vendor/assets/stylesheets` into your site's `_sass` folder.
-- Include each file uniquely in your master `.scss` (e.g., `@import "fiat_ui/variables";`); or you can create a file like `_sass/fiat_ui.scss` that refers to other individual files within a `_sass/fiat_ui` folder, and then call the main file in your master `.scss` file.
-- Compile Bootstrap `.scss` files before you load `fiat_ui`. (You cannot use pre-compiled Bootstrap files.)
+- Include each file uniquely in your master `.scss` (e.g., `@import "synapse_ui/variables";`); or you can create a file like `_sass/synapse_ui.scss` that refers to other individual files within a `_sass/synapse_ui` folder, and then call the main file in your master `.scss` file.
+- Compile Bootstrap `.scss` files before you load `synapse_ui`. (You cannot use pre-compiled Bootstrap files.)
 - Include JavaScript by copying the contents of `vendor/assets/javascripts` into your Jekyll site and calling them as usual.
 
 ## Styles
@@ -33,7 +33,7 @@ Stylesheets depend on the latest Bootstrap, and should be loaded after it:
 
 ```ruby
 @import "bootstrap";
-@import "fiat_ui";
+@import "synapse_ui";
 ```
 
 ### Approach / philosophy
@@ -52,22 +52,22 @@ Most apps utilize many of the same UI components. This library allows you to ado
 
 ### Sheets
 
-You can load all stylesheets in your app by calling `@import "fiat_ui"`. Or you can load individual sheets by calling, for example, `@import "fiat_ui/buttons"`.
+You can load all stylesheets in your app by calling `@import "synapse_ui"`. Or you can load individual sheets by calling, for example, `@import "synapse_ui/buttons"`.
 
 The following sheets are available for inclusion:
 
-- [animations.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/animations.scss)
-- [buttons.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/buttons.scss)
-- [content.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/content.scss)
-- [forms.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/forms.scss)
-- [layouts.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/layouts.scss)
-- [material.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/material.scss)
-- [modals.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/modals.scss)
-- [nav.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/nav.scss)
-- [tables.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/tables.scss)
-- [tweaks.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/tweaks.scss)
-- [typography.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/typography.scss)
-- [variables.scss](https://github.com/fiatinsight/fiat_ui/blob/master/vendor/assets/stylesheets/fiat_ui/variables.scss)
+- [animations.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/animations.scss)
+- [buttons.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/buttons.scss)
+- [content.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/content.scss)
+- [forms.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/forms.scss)
+- [layouts.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/layouts.scss)
+- [material.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/material.scss)
+- [modals.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/modals.scss)
+- [nav.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/nav.scss)
+- [tables.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/tables.scss)
+- [tweaks.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/tweaks.scss)
+- [typography.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/typography.scss)
+- [variables.scss](https://github.com/fiatinsight/synapse_ui/blob/master/vendor/assets/stylesheets/synapse_ui/variables.scss)
 
 ### Customization
 
@@ -77,7 +77,7 @@ You can override style variables by including your own `project_name-variables.s
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap');
 @import "bootstrap";
 @import "project_name-variables";
-@import "fiat_ui";
+@import "synapse_ui";
 @import "project_name-styles";
 ```
 
@@ -106,7 +106,7 @@ You can include this gem as a yarn package by including the following in your ma
 {
   "dependencies": {
     "@rails/webpacker": "^3.2.1",
-    "fiat_ui": "https://github.com/fiatinsight/fiat_ui"
+    "synapse_ui": "https://github.com/fiatinsight/synapse_ui"
     ...
   }
 }
@@ -115,7 +115,7 @@ You can include this gem as a yarn package by including the following in your ma
 Then add a Stimulus controller context for the gem in the app's `application.js` file:
 
 ```javascript
-const gem_context = require.context('fiat_ui/app/javascript/packs/controllers', true, /\.js$/)
+const gem_context = require.context('synapse_ui/app/javascript/packs/controllers', true, /\.js$/)
 application.load(definitionsFromContext(gem_context))
 ```
 
@@ -127,10 +127,10 @@ Some integrated components are also included to make it easier to build common u
 
 ### Alerts
 
-An [alerts](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_alerts.html.erb) module to handle `flash` notifications is available by loading:
+An [alerts](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/_alerts.html.erb) module to handle `flash` notifications is available by loading:
 
 ```ruby
-= render 'layouts/fiat_ui/components/alerts'
+= render 'layouts/synapse_ui/components/alerts'
 ```
 
 This picks up the value of both `flash[:alert]` and `flash[:notice]` and renders them in the view.
@@ -147,20 +147,20 @@ $(document).on('turbolinks:load', function() {
 
 ### Analytics
 
-A [Google Analytics tracking script](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_analytics.html.erb) is supplied. You can include it in the `head` section of your main template file by calling:
+A [Google Analytics tracking script](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/_analytics.html.erb) is supplied. You can include it in the `head` section of your main template file by calling:
 
 ```ruby
-= render partial: 'layouts/fiat_ui/components/analytics', locals: { tracking_id: "UA-12345678-9"}
+= render partial: 'layouts/synapse_ui/components/analytics', locals: { tracking_id: "UA-12345678-9"}
 ```
 
 Make sure to replace the `tracking_id` variable with yours from Google. Setting the value to `nil` will bypass the script loading.
 
 ### Errors
 
-An [errors](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_errors.html.erb) module is available to handle information passed to `flash[:errors]`. To use it, include the following in your layout template:
+An [errors](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/_errors.html.erb) module is available to handle information passed to `flash[:errors]`. To use it, include the following in your layout template:
 
 ```ruby
-= render 'layouts/fiat_ui/components/errors'
+= render 'layouts/synapse_ui/components/errors'
 ```
 
 To pass information to the partial — e.g., during a form submission fault — do something like this in your controller:
@@ -203,15 +203,15 @@ You can read the full documentation [here](https://github.com/kpumuk/meta-tags).
 
 ### Modals
 
-You can include [modals](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/modals). Invoke them by using:
+You can include [modals](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/modals). Invoke them by using:
 
 ```ruby
-= render partial: 'layouts/fiat_ui/components/modals/small-modal'
+= render partial: 'layouts/synapse_ui/components/modals/small-modal'
 ```
 
 ### Navigation
 
-Responsive navigation is available. It includes a [navbar](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/nav/_navbar.html.erb) partial and a fly-out / modal-driven [menu](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/nav/_nav-modal.html.erb).
+Responsive navigation is available. It includes a [navbar](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/nav/_navbar.html.erb) partial and a fly-out / modal-driven [menu](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/nav/_nav-modal.html.erb).
 
 To install the navbar, add the following to your template:
 
@@ -227,7 +227,7 @@ navbar_locals = {
     ['Another','root_path','fal fa-users'],
     ],
   }
-= render partial: 'layouts/fiat_ui/components/nav/navbar', locals: navbar_locals
+= render partial: 'layouts/synapse_ui/components/nav/navbar', locals: navbar_locals
 ```
 
 You can pass the following variables to `locals` (N.B. they all default to `false` when not included):
@@ -271,7 +271,7 @@ nav_modal_locals = {
     }
     ] # end all sections
   }
-= render partial: 'layouts/fiat_ui/components/nav/nav-modal', locals: nav_modal_locals
+= render partial: 'layouts/synapse_ui/components/nav/nav-modal', locals: nav_modal_locals
 ```
 
 You can pass the following variables to `locals`:
@@ -282,10 +282,10 @@ You can pass the following variables to `locals`:
 
 ### Search
 
-Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_search-keyword.html.erb):
+Search with [ransack](https://github.com/activerecord-hackery/ransack) can be configured simply using a [form partial](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/_search-keyword.html.erb):
 
 ```ruby
-= render partial: 'layouts/fiat_ui/components/search-keyword', locals: { url: 'search_everything_path', placeholder: 'Search', filter_types: [ ['organization', 'Organizations'], ['user', 'Users'] ] }
+= render partial: 'layouts/synapse_ui/components/search-keyword', locals: { url: 'search_everything_path', placeholder: 'Search', filter_types: [ ['organization', 'Organizations'], ['user', 'Users'] ] }
 ```
 
 You can pass the following variables into the `locals`:
@@ -330,10 +330,10 @@ Sitemaps can be configured via the `sitemap_generator` gem dependency. Read the 
 
 ### Spinner
 
-A [spinner](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/_spinner.html.erb) is available to use for page loads, transitions, etc. To include it in your app, load the following partial in your layout template:
+A [spinner](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/_spinner.html.erb) is available to use for page loads, transitions, etc. To include it in your app, load the following partial in your layout template:
 
 ```ruby
-= render partial: 'layouts/fiat_ui/components/spinner', locals: { color: 'light', icon: 'fal fa-spinner-third' }
+= render partial: 'layouts/synapse_ui/components/spinner', locals: { color: 'light', icon: 'fal fa-spinner-third' }
 ```
 
 This accepts variables for `color` and `icon`. By default, color is set to `light`, but can also be `dark`. The `icon` variable is `fal fa-spinner-third` by default, but can be any fully qualified Font Awesome icon.
@@ -370,10 +370,10 @@ If you want to create a custom spinner template, instead, you can do so by wrapp
 
 ### Tables
 
-A [table](https://github.com/fiatinsight/fiat_ui/blob/master/app/views/layouts/fiat_ui/components/tables/_config.html.erb) generator is available for creating advanced, flexible tables. To invoke, include the following in your view:
+A [table](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/tables/_config.html.erb) generator is available for creating advanced, flexible tables. To invoke, include the following in your view:
 
 ```ruby
-= render partial: 'layouts/fiat_ui/components/tables/config', locals: { header: false, columns: ['Column 1', 'Column 2'], items: @items, namespace: 'namespace', type: 'item-type', cache_scope: 'specific_cache_scope', cache_status: true, style: 'minimal condensed', variables: { variable_one: computed_value, variable_two: "red" } }
+= render partial: 'layouts/synapse_ui/components/tables/config', locals: { header: false, columns: ['Column 1', 'Column 2'], items: @items, namespace: 'namespace', type: 'item-type', cache_scope: 'specific_cache_scope', cache_status: true, style: 'minimal condensed', variables: { variable_one: computed_value, variable_two: "red" } }
 ```
 
 You  can pass the following variables into the `locals`:
@@ -392,7 +392,7 @@ You  can pass the following variables into the `locals`:
 
 - `namespace`: Optionally include a namespace to use in the list item partial (e.g., to reuse partials for multiple namespaces).
 
-- `type`: Include the partial name for this item type. Create partials in a folder in your app at `app/views/layouts/fiat_ui/components/tables/item_types`. E.g., `_page.html.erb` would be called with `page`.
+- `type`: Include the partial name for this item type. Create partials in a folder in your app at `app/views/layouts/synapse_ui/components/tables/item_types`. E.g., `_page.html.erb` would be called with `page`.
 
 - `cache_status`: Determines whether results will be cached or not. Defaults to `false` unless included as `true`.
 
@@ -416,7 +416,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/fiatinsight/fiat_ui.
+Bug reports and pull requests are welcome on GitHub at https://github.com/fiatinsight/synapse_ui.
 
 ## License
 

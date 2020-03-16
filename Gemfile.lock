@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fiat_ui (0.1.6)
+    synapse_ui (0.1.6)
       meta-tags
       ransack
       sitemap_generator
@@ -78,7 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  fiat_ui!
+  synapse_ui!
   rake (~> 10.0)
 
 BUNDLED WITH

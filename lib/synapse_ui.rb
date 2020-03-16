@@ -1,5 +1,5 @@
-require "fiat_ui/engine"
+require "synapse_ui/engine"
 
-module FiatUi
+module SynapseUi
   # class Engine < ::Rails::Engine; end
 end

@@ -1,16 +1,16 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "fiat_ui/version"
+require "synapse_ui/version"
 
 Gem::Specification.new do |s|
-  s.name          = "fiat_ui"
-  s.version       = FiatUi::VERSION
+  s.name          = "synapse_ui"
+  s.version       = SynapseUi::VERSION
   s.authors       = ["Andrew Haines"]
   s.email         = ["andrew@fiatinsight.com"]
 
   s.summary       = "Fiat Insight UI libraries"
   s.description   = "This is a front end pack designed to be used by Fiat Insight developers on Rails and Jekyll projects."
-  s.homepage      = "https://github.com/fiatinsight/fiat_ui"
+  s.homepage      = "https://github.com/fiatinsight/synapse_ui"
   s.license       = "MIT"
 
   s.files         = `git ls-files -z`.split("\x0").reject do |f|
