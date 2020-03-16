@@ -1,4 +1,4 @@
-# Fiat UI
+# Synapse UI
 
 This gem is designed to provide baseline UI for Rails projects at [@fiatinsight](https://github.com/fiatinsight/).
 
