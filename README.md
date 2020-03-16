@@ -96,6 +96,31 @@ To include Font Awesome, `require` the following in your `application.js` file:
 
 > Note: If you're not using the assets pipeline for JavaScript, you'll still need to include `app/assets/javascripts/application.js` for this, and call it in your template with `javascript_include_tag` in your header. Make sure it loads after you invoke jQuery.
 
+### Stimulus controllers
+
+> Note: This is experimental.
+
+You can include this gem as a yarn package by including the following in your main application's `package.json` file:
+
+```yml
+{
+  "dependencies": {
+    "@rails/webpacker": "^3.2.1",
+    "fiat_ui": "https://github.com/fiatinsight/fiat_ui"
+    ...
+  }
+}
+```
+
+Then add a Stimulus controller context for the gem in the app's `application.js` file:
+
+```javascript
+const gem_context = require.context('fiat_ui/app/javascript/packs/controllers', true, /\.js$/)
+application.load(definitionsFromContext(gem_context))
+```
+
+Included controllers will be available using the normal `data-controller` convention.
+
 ## Components
 
 Some integrated components are also included to make it easier to build common utilities and workflows.
