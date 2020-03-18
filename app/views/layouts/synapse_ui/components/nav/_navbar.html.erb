@@ -23,9 +23,28 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <div class="ml-auto">
             <ul class="nav navbar-nav">
-              <% if links %>
-                <% links.each do |i| %>
-                  <li class="nav-item"><%= link_to send(i[1]), class: 'nav-link' do %><% if i[2] %><i class="<%= i[2] %> mr-2"></i><% end %><%= i[0] %><% end %></li>
+              <% if sections %>
+                <% sections.each do |s| %>
+                  <% if s[:items] %>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= s[:title] %>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <% s[:items].each do |i| %>
+                          <%= link_to send(i[:path]), method: i[:method], class: 'dropdown-item' do %><% if i[:icon] %><i class="<%= i[:icon] %>"></i><% end %><%= i[:title] %><% end %>
+                        <% end %>
+                      </div>
+                    </li>
+                  <% else %>
+                    <li class="nav-item">
+                      <% if s[:path_variable] %>
+                        <%= link_to send(s[:path], eval(s[:path_variable])), method: s[:method], class: 'nav-link' do %><% if s[:icon] %><i class="<%= s[:icon] %>"></i><% end %><%= s[:title] %><% end %>
+                      <% else %>
+                        <%= link_to send(s[:path]), method: s[:method], class: 'nav-link' do %><% if s[:icon] %><i class="<%= s[:icon] %>"></i><% end %><%= s[:title] %><% end %>
+                      <% end %>
+                    </li>
+                  <% end %>
                 <% end %>
               <% end %>
               <% if menu_icon || menu_title %>
