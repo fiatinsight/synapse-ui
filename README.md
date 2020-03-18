@@ -91,6 +91,8 @@ To include Font Awesome, get the pro version package by following [these instruc
 }
 ```
 
+> QUESTION: Will this work in production? It should, since what's here will already be compiled...
+
 Then import the JavaScript file into your `application.js` file:
 
 ```javascript
