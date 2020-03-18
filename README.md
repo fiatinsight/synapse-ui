@@ -225,10 +225,27 @@ navbar_locals = {
   menu_icon: 'fal fa-arrow-left mr-2',
   menu_title: 'Go',
   display_menu_title_mobile: false,
-  links: [
-    ['Test','root_path','fal fa-users'],
-    ['Another','root_path','fal fa-users'],
-    ],
+  sections: [
+    {
+      title: 'Company',
+      path: 'root_path',
+      icon: 'far fa-home mr-2'
+    },
+    {
+      title: 'Services',
+      path: 'root_path',
+      items: [
+        {
+          title: 'Design',
+          path: 'root_path'
+        },
+        {
+          title: 'Support',
+          path: 'root_path'
+        }
+      ]
+    }
+  ] # end all sections
   }
 = render partial: 'layouts/synapse_ui/components/nav/navbar', locals: navbar_locals
 ```
@@ -238,7 +255,7 @@ You can pass the following variables to `locals` (N.B. they all default to `fals
 - `classes`: Classes for your navbar wrapper, e.g., `fixed-top` and/or `layer-0`.
 - `image`: An image you want to display in the logo section.
 - `title`: A title you want to display in the logo section if an image isn't included.
-- `links`: Top level links for your navbar, including name, path, and an icon (optional).
+- `sections`: The content of your menu; this is structured as an item with a title, link path, path variable (optional), icon, and any sub-items, each including a title, link path, variable, icon, and method (optional; defaults to `get`).
 - `menu_icon`: The Font Awesome icon that'll show on your menu button.
 - `menu_title`: A title for your menu button.
 - `menu_button_classes`: Classes for your menu button on non-mobile.
