@@ -1,40 +1,34 @@
 # Synapse UI
 
-This gem is designed to provide baseline UI for Rails projects at [@fiatinsight](https://github.com/fiatinsight/).
-
-> Currently installed on [Tekne](https://github.com/fiatinsight/tekne/), [Parish.es](https://github.com/fiatinsight/parish-app), [Cleveland Mixer](https://github.com/fiatinsight/cleveland-mixer/), [CatholicStock](https://github.com/fiatinsight/catholic-stock/), [Ethika Politika](https://github.com/fiatinsight/ethika-politika/), [BrokrQuotes](https://github.com/fiatinsight/brokrquotes/), and others.
+This gem is creating UIs with Fiat's Synapse product.
 
 ## Installation
 
-### Rails
-
-Add this to your application's Gemfile:
+Add this to your application's `Gemfile`:
 
 ```ruby
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'synapse_ui', github: 'fiatinsight/synapse_ui'
+gem 'synapse_ui'
 ```
 
-> For stable release with older applications using this gem prior to November 2019, include `ref: 93628761a50e0553d77ee563ed52062c5c070333` in the gem dependency.
+Add this to your application's `package.json` file:
 
-### Jekyll
+```json
+"dependencies": {
+  "synapse_ui": "https://github.com/fiatinsight/synapse_ui"
+}
+```
 
-You can use parts of this library for Jekyll sites.
-- Copy the contents of `vendor/assets/stylesheets` into your site's `_sass` folder.
-- Include each file uniquely in your master `.scss` (e.g., `@import "synapse_ui/variables";`); or you can create a file like `_sass/synapse_ui.scss` that refers to other individual files within a `_sass/synapse_ui` folder, and then call the main file in your master `.scss` file.
-- Compile Bootstrap `.scss` files before you load `synapse_ui`. (You cannot use pre-compiled Bootstrap files.)
-- Include JavaScript by copying the contents of `vendor/assets/javascripts` into your Jekyll site and calling them as usual.
+Add this to your applications `application.scss`file:
+
+```css
+@import '~synapse_ui/vendor/assets/stylesheets/synapse_ui';
+```
 
 ## Styles
 
 ### Dependencies
 
-Stylesheets depend on the latest Bootstrap, and should be loaded after it:
-
-```ruby
-@import "bootstrap";
-@import "synapse_ui";
-```
+Stylesheets depend on the latest Bootstrap.
 
 ### Approach / philosophy
 
