@@ -75,18 +75,27 @@ You can override style variables by including your own `project_name-variables.s
 
 ## JavaScript
 
-### Font Awesome
+Import included JavaScript into your main application's `application.js` file:
 
-To include Font Awesome, `require` the following in your `application.js` file:
-
-```ruby
-//= require fa-v4-shims.min
-//= require fontawesome-all.min
+```javascript
+import 'synapse_ui/app/javascript/packs/application'
 ```
 
-> Legal Notice: Font Awesome is included in this gem under Fiat's [Font Awesome Pro License](https://fontawesome.com/license). Users not covered by Fiat's license (i.e., "non-Creators" as designated by Font Awesome) are _not_ hereby authorized to use licensed materials. Inclusion of Font Awesome scripts in this gem is not designed to distribute permissions to non-Creators, nor does it constitute a standalone copy of any licensed materials.
+### Font Awesome
 
-> Note: If you're not using the assets pipeline for JavaScript, you'll still need to include `app/assets/javascripts/application.js` for this, and call it in your template with `javascript_include_tag` in your header. Make sure it loads after you invoke jQuery.
+To include Font Awesome, get the pro version package by following [these instructions](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro). Then make sure the package is added to your app's `package.json` file:
+
+```json
+"dependencies": {
+  "@fortawesome/fontawesome-pro": "^5.12.1"
+}
+```
+
+Then import the JavaScript file into your `application.js` file:
+
+```javascript
+import '@fortawesome/fontawesome-pro/js/all.js'
+```
 
 ### Stimulus controllers
 
