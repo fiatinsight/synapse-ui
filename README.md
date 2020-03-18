@@ -1,6 +1,6 @@
 # Synapse UI
 
-This gem is creating UIs with Fiat's Synapse product.
+This gem is for creating UIs with Fiat's Synapse product.
 
 ## Installation
 
@@ -18,17 +18,15 @@ Add this to your application's `package.json` file:
 }
 ```
 
-Add this to your applications `application.scss`file:
-
-```css
-@import '~synapse_ui/vendor/assets/stylesheets/synapse_ui';
-```
-
 ## Styles
 
-### Dependencies
+Add this to your `application.scss`file:
 
-Stylesheets depend on the latest Bootstrap.
+```css
+@import '~bootstrap/scss/bootstrap';
+@import '~synapse_ui/vendor/assets/stylesheets/synapse_ui';
+```
+> Note: Stylesheets depend on Bootstrap and should be loaded after
 
 ### Approach / philosophy
 
