@@ -1,11 +1,14 @@
 import { Controller } from "stimulus"
 
+import Rails from '@rails/ujs';
+
 export default class extends Controller {
   static targets = [ "form", "status" ]
 
   connect() {
     this.timeout  = null
     this.duration = this.data.get("duration") || 1000
+    console.log("Autosave controller connected...")
   }
 
   save() {

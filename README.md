@@ -81,6 +81,8 @@ Import included JavaScript into your main application's `application.js` file:
 import 'synapse_ui/app/javascript/packs/application'
 ```
 
+> Development note: To test new JavaScript / Stimulus controllers, you'll need to run `yarn upgrade synapse_ui` in your application development environment to make them available.
+
 ### Font Awesome
 
 To include Font Awesome, get the pro version package by following [these instructions](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro). Then make sure the package is added to your app's `package.json` file:
@@ -432,7 +434,7 @@ You  can pass the following variables into the `locals`:
 
 ## Development
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+*Forthcoming...*
 
 ## Contributing
 

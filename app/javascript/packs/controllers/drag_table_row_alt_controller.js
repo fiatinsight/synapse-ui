@@ -1,11 +1,9 @@
 // Based on: https://johnbeatty.co/2018/03/09/stimulus-js-tutorial-how-do-i-drag-and-drop-items-in-a-list/
 
-console.log("SynapseUiDragTableRowController.js")
-
 import { Controller } from "stimulus"
 export default class extends Controller {
   connect() {
-    console.log("Drag and drop for table rows...")
+    console.log("Drag table rows controller connected...")
   }
 
   dragstart(event) {
