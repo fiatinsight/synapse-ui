@@ -3,7 +3,7 @@ import { Controller } from "stimulus"
 import Rails from '@rails/ujs';
 
 export default class extends Controller {
-  static targets = [ "form", "status" ]
+  static targets = [ "form", "status", "visibility" ]
 
   connect() {
     this.timeout  = null
@@ -30,9 +30,11 @@ export default class extends Controller {
 
   setStatus(message) {
     this.statusTarget.textContent = message
+    this.visibilityTarget.classList.add("visible")
 
     this.timeout = setTimeout(() => {
       this.statusTarget.textContent = ""
+      this.visibilityTarget.classList.remove("visible")
     }, 2000)
   }
 }

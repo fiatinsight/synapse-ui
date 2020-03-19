@@ -18,6 +18,17 @@
   height: 100%;
 }
 
+#autosave-status {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  z-index: 3000;
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+
 .bg-video {
   video {
     position: fixed;

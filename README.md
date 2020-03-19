@@ -103,30 +103,20 @@ import '@fortawesome/fontawesome-pro/js/all.js'
 
 ### Stimulus controllers
 
-> Note: This is experimental.
-
-You can include this gem as a yarn package by including the following in your main application's `package.json` file:
-
-```yml
-{
-  "dependencies": {
-    "@rails/webpacker": "^3.2.1",
-    "synapse_ui": "https://github.com/fiatinsight/synapse_ui"
-    ...
-  }
-}
-```
-
-Then add a Stimulus controller context for the gem in the app's `application.js` file:
+Add a Stimulus controller context for the gem in the app's `application.js` file:
 
 ```javascript
-const gem_context = require.context('synapse_ui/app/javascript/packs/controllers', true, /\.js$/)
-application.load(definitionsFromContext(gem_context))
+const synapse_ui_context = require.context('synapse_ui/app/javascript/packs/controllers', true, /\.js$/)
+application.load(definitionsFromContext(synapse_ui_context))
 ```
 
-Included controllers will be available using the normal `data-controller` convention.
+Included controllers will be available using the normal `data-controller` convention:
 
-## Components
+- [autosave](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/autosave_controller.js)
+- [drag-table-row](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/drag_table_row_controller.js)
+- [hello](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/hello_controller.js)
+
+## Other components
 
 Some integrated components are also included to make it easier to build common utilities and workflows.
 
@@ -155,10 +145,10 @@ $(document).on('turbolinks:load', function() {
 A [Google Analytics tracking script](https://github.com/fiatinsight/synapse_ui/blob/master/app/views/layouts/synapse_ui/components/_analytics.html.erb) is supplied. You can include it in the `head` section of your main template file by calling:
 
 ```ruby
-= render partial: 'layouts/synapse_ui/components/analytics', locals: { tracking_id: "UA-12345678-9"}
+= render partial: 'layouts/synapse_ui/components/analytics', locals: { tracking_id: "UA-12345678-9", include_dev: true }
 ```
 
-Make sure to replace the `tracking_id` variable with yours from Google. Setting the value to `nil` will bypass the script loading.
+Make sure to replace the `tracking_id` variable with yours from Google. Setting the value to `nil` will bypass the script loading. You can also choose to include the script in development by setting `include_dev` to `true` (optional).
 
 ### Errors
 
