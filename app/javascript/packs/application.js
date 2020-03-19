@@ -1,4 +1,4 @@
-console.log("Synapse UI application.js is loading...")
+console.log("Synapse UI application.js is loaded")
 
 $(document).on('turbolinks:load', function() {
   // hide spinner when a page is loaded
