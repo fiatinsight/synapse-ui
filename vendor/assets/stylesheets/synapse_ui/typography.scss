@@ -158,10 +158,8 @@ p {
 
 .cms-content {
   font-size: 1.4rem;
-  font-family: $serif;
   color: $charcoal;
   h1 {
-    font-family: $serif;
     color: $charcoal;
     font-size: 6rem;
     line-height: 6.3rem;
@@ -169,7 +167,6 @@ p {
     letter-spacing: -1px;
   }
   h2 {
-    font-family: $serif;
     color: $dark-gray;
     font-size: 3rem;
     line-height: 3.3rem;
@@ -188,7 +185,6 @@ p {
     }
   }
   h6 {
-    font-family: $serif;
     color: $gray;
     font-size: 1.5rem;
     font-weight: 700;
@@ -196,10 +192,6 @@ p {
   }
   p {
     font-size: 1.4rem;
-    font-family: $serif;
     color: $charcoal;
-  }
-  .btn {
-    font-family: $body;
   }
 }
