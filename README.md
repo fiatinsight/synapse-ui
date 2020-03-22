@@ -93,13 +93,20 @@ To include Font Awesome, get the pro version package by following [these instruc
 }
 ```
 
-> QUESTION: Will this work in production? It should, since what's here will already be compiled...
-
 Then import the JavaScript file into your `application.js` file:
 
 ```javascript
 import '@fortawesome/fontawesome-pro/js/all.js'
 ```
+
+For deploying to Heroku, make sure you have the following in your `.npmrc` file (application root):
+
+```
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken=${FONT_AWESOME_AUTH_TOKEN}
+```
+
+Then set a Heroku environment variable for `FONT_AWESOME_AUTH_TOKEN`.
 
 ### Stimulus controllers
 
