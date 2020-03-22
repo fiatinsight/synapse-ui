@@ -173,7 +173,6 @@ p {
     letter-spacing: -1px;
   }
   @include media-breakpoint-down(xs) {
-    font-size: 1.3rem;
     h1 {
       font-size: 3rem;
       line-height: 3.3rem;
