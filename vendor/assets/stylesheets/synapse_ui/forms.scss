@@ -82,6 +82,7 @@ trix-editor {
 
 trix-toolbar {
   .trix-button-row {
+    white-space: inherit;
     flex-wrap: wrap;
   }
 }
