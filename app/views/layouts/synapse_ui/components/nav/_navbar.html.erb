@@ -1,6 +1,7 @@
 <% classes ||= false %>
 <% image ||= false %>
 <% title ||= false %>
+<% title_link ||= '/' %>
 <% sections ||= false %>
 <% menu_icon ||= false %>
 <% menu_title ||= false %>
@@ -12,7 +13,7 @@
   <div class="container d-block">
     <div class="row no-gutters">
       <div class="col-lg-3 col-md-4 col-8">
-        <a class="navbar-brand" href="#"><% if image %><img src="<%= image %>"  class="navbar-image"/><% elsif title %><%= title %><% end %></a>
+        <a class="navbar-brand" href="<%= title_link %>"><% if image %><img src="<%= image %>"  class="navbar-image"/><% elsif title %><%= title %><% end %></a>
       </div>
       <div class="col-4 d-md-none align-self-center">
         <button class="navbar-toggler navbar-toggler-right float-right d-flex d-sm-none <% if mobile_menu_button_classes %><%= mobile_menu_button_classes %><% end %>" type="button" data-toggle="modal" data-target="#menu" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
