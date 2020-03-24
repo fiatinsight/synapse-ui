@@ -403,7 +403,7 @@ You  can pass the following variables into the `locals`:
 
 - `columns`: Set an array of column titles between one and a handful. Defaults to `false` if not included.
 
-- `paginate`: Decide whether the list should paginate. If `true`, you'll need to set the pagination parameters on the query, probably in the controller. If not set, it will default to `false`.
+- `paginate`: Decide whether the list should paginate. If `true`, you'll need to set the pagination parameters on the query, probably in the controller. If not set, it will default to `false`. (To ensure this works, you'll want to add `gem 'will_paginate', require: true` to your app `Gemfile`.)
 
 - `per_page`: Sets the pagination number to 25 unless it's explicitly declared otherwise.
 
