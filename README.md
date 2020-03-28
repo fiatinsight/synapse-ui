@@ -119,6 +119,7 @@ application.load(definitionsFromContext(synapse_ui_context))
 
 Included controllers will be available using the normal `data-controller` convention:
 
+- [auto-grow-textarea](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/auto_grow_textarea_controller.js)
 - [autosave](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/autosave_controller.js)
 - [drag-table-row](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/drag_table_row_controller.js)
 - [hello](https://github.com/fiatinsight/synapse_ui/blob/master/app/javascript/packs/controllers/hello_controller.js)
