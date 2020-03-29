@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors       = ["Andrew Haines"]
   s.email         = ["andrew@fiatinsight.com"]
 
-  s.summary       = "Fiat Insight UI libraries"
-  s.description   = "This is a front end pack designed to be used by Fiat Insight developers on Rails and Jekyll projects."
+  s.summary       = "Synapse UI libraries"
+  s.description   = "This is a front end pack designed to be used by Fiat Insight developers on Synapse projects."
   s.homepage      = "https://github.com/fiatinsight/synapse_ui"
   s.license       = "MIT"
 
