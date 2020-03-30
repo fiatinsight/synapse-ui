@@ -78,8 +78,8 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  synapse_ui!
   rake (~> 10.0)
+  synapse_ui!
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
