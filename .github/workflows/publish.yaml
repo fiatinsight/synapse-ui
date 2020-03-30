@@ -102,10 +102,11 @@ jobs:
     # REMOVED SECTION TO RETRIEVE LOWER LEVEL GEMS B/C THIS IS ONLY UI COMPONENTS
     - name: Push package list to Dynamodb
       run: |
+        GEMS=
         jq -n \
           --arg GEM_NAME "$GEM_NAME" \
           --arg NEW_VERSION "$NEW_VERSION" \
-          '{"packageName": {"S": $GEM_NAME}, "currentVersion": {"S": $NEW_VERSION} \
+          '{"packageName": {"S": $GEM_NAME}, "currentVersion": {"S": $NEW_VERSION} }' \
           > packages.json
         aws dynamodb put-item --table-name $DYNAMO_TABLE_NAME --item file://packages.json
 
