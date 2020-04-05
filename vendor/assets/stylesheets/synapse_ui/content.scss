@@ -19,13 +19,13 @@
 }
 
 #autosave-status {
-  position: fixed;
+  position: sticky;
   top: 0;
   margin: 0;
   z-index: 3000;
   display: none;
   &.visible {
-    display: block;
+    display: flex;
   }
 }
 
