@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     this.timeout  = null
-    this.duration = this.data.get("duration") || 1000
+    this.duration = this.data.get("duration") || 1500
     console.log("Autosave controller connected...")
   }
 
@@ -21,7 +21,7 @@ export default class extends Controller {
   }
 
   success() {
-    this.setStatus("Saved!")
+    this.setStatus("Saved")
   }
 
   error() {
