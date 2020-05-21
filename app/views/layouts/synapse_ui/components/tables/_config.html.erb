@@ -1,4 +1,7 @@
 <% title ||= false %>
+<% filters ||= false %>
+<% column_toggles ||= false %>
+<% items ||= nil %>
 <% header ||= false %>
 <% columns ||= [] %>
 <% paginate ||= false %>
@@ -7,26 +10,77 @@
 <% cache_status ||= false %>
 <% cache_scope ||= "#{controller_path}/#{action_name}" %>
 <% cache_expire ||= false %>
-<% style ||= nil %>
+<% wrapper_classes ||= nil %>
+<% table_classes ||= nil %>
 <% variables ||= nil %>
 <% data_controller ||= nil %>
 <% data_action ||= nil %>
 <% data_url ||= nil %>
+<% header_classes ||= nil %>
+<% body_classes ||= nil %>
 
-<% if paginate %>
+<% if paginate && items %>
   <% items = items.paginate(page: params[:page], per_page: per_page) %>
 <% end %>
 
 <% if title %>
   <h6><%= title %></h6>
 <% end %>
-<div class="table-responsive">
-  <table class="table <%= style %>" <% if data_controller %>data-controller="<%= data_controller %>"<% end %> <% if data_action %>data-action="<%= data_action %>"<% end %> <% if data_url %>data-url="<%= data_url %>"<% end %>>
-    <%= render partial: 'layouts/synapse_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables } %>
-    <%= render partial: 'layouts/synapse_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, data_url: data_url, variables: variables } %>
+<% if filters %>
+  <div class="dropdown d-inline-block">
+    <button class="filter-button btn btn-link dropdown-toggle mr-2 mb-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter by
+    </button>
+    <div class="dropdown-menu">
+      <% filters.each do |f| %>
+        <a class="dropdown-item" href="#"><%= f %></a>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% if column_toggles %>
+  <div class="dropdown d-inline-block">
+    <button class="filter-button btn btn-link dropdown-toggle mr-2 mb-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Toggle columns
+    </button>
+    <div class="dropdown-menu">
+      <% column_toggles.each do |c| %>
+        <a class="dropdown-item <%= c[1] %>" onclick="toggleColumn('<%= c[1] %>')"><%= c[0] %></a>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div id="myDIV" class="table-responsive <%= wrapper_classes %>">
+  <table class="table <%= table_classes %>" <% if data_controller %>data-controller="<%= data_controller %>"<% end %> <% if data_action %>data-action="<%= data_action %>"<% end %> <% if data_url %>data-url="<%= data_url %>"<% end %>>
+    <%= render partial: 'layouts/synapse_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables, header_classes: header_classes } %>
+    <%= render partial: 'layouts/synapse_ui/components/tables/body', locals: { items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, data_url: data_url, variables: variables, body_classes: body_classes } %>
   </table>
 </div>
 
-<% if paginate %>
+<% if paginate && items %>
   <%= will_paginate items.paginate(page: params[:page], per_page: per_page) %>
+<% end %>
+
+<% if column_toggles %>
+  <script type="text/javascript">
+    // "use strict";
+    <% column_toggles.each do |c| %>
+      function toggleColumn('<%= c[1] %>') {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    <% end %>
+
+
+
+    <% column_toggles.each do |c| %>
+      $('<%= c[1] %>').click(function() {
+        $('.table').css('display', 'none');
+      });
+    <% end %>
+  </script>
 <% end %>
