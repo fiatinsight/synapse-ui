@@ -5,15 +5,17 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', "<%= tracking_id %>");
-      document.addEventListener('turbolinks:load', event => {
-        if (typeof gtag === 'function') {
-          gtag('config', "<%= tracking_id %>", {
-            // 'page_title' : event.target.title,
-            'page_location': event.data.url
-          });
-        }
-      });
+      // Loading this file in the <body> allows adding this here:
+      gtag('config', "UA-37022775-11");
+      // If loaded in <head> something like this is required:
+      // document.addEventListener('turbolinks:load', event => {
+      //   if (typeof gtag === 'function') {
+      //     gtag('config', "<%= tracking_id %>", {
+      //       // 'page_title' : event.target.title,
+      //       'page_location': event.data.url
+      //     });
+      //   }
+      // });
     </script>
   <% end %>
 <% end %>
