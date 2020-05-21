@@ -1,5 +1,5 @@
-<tbody class="" <% if data_url %>data-url="<%= data_url %>"<% end %>>
-  <% if items.any? %>
+<tbody class="<%= body_classes %>" <% if data_url %>data-url="<%= data_url %>"<% end %>>
+  <% if items && items.any? %>
     <% items.each do |i| %>
       <% if cache_scope && cache_status %>
         <% if cache_expire %>
