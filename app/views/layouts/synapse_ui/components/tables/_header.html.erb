@@ -1,8 +1,8 @@
 <% if header %>
-  <thead>
+  <thead class="<%= header_classes %>">
     <tr>
       <% columns.each do |c| %>
-        <th><%= c %></th>
+        <th class="<%= c[1] %>"><%= c[0] %></th>
       <% end %>
     </tr>
   </thead>

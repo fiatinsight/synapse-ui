@@ -1,18 +1,18 @@
-<tbody class="" <% if data_url %>data-url="<%= data_url %>"<% end %>>
-  <% if items.any? %>
-    <% items.each do |i| %>
+<tbody class="<%= body_classes %>" <% if data_url %>data-url="<%= data_url %>"<% end %>>
+  <% if items && items.any? %>
+    <% items.each_with_index do |i, index| %>
       <% if cache_scope && cache_status %>
         <% if cache_expire %>
           <% cache [i, cache_scope, expires_in: cache_expire] do %>
-            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {i: i, namespace: namespace, cache_expire: cache_expire, variables: variables}, cached: true %>
+            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, namespace: namespace, cache_expire: cache_expire, variables: variables}, cached: true %>
           <% end %>
         <% else %>
           <% cache [i, cache_scope] do %>
-            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {i: i, namespace: namespace, variables: variables}, cached: true %>
+            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, namespace: namespace, variables: variables}, cached: true %>
           <% end %>
         <% end %>
       <% else %>
-        <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {i: i, namespace: namespace, variables: variables}, cached: false %>
+        <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, index: index, namespace: namespace, variables: variables}, cached: false %>
       <% end %>
     <% end %>
   <% else %>
