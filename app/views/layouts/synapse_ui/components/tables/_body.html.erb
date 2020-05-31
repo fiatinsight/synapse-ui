@@ -4,11 +4,11 @@
       <% if cache_scope && cache_status %>
         <% if cache_expire %>
           <% cache [i, cache_scope, expires_in: cache_expire] do %>
-            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, namespace: namespace, cache_expire: cache_expire, variables: variables}, cached: true %>
+            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, index: index, namespace: namespace, cache_expire: cache_expire, variables: variables}, cached: true %>
           <% end %>
         <% else %>
           <% cache [i, cache_scope] do %>
-            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, namespace: namespace, variables: variables}, cached: true %>
+            <%= render partial: "layouts/synapse_ui/components/tables/item_types/#{type}", locals: {columns: columns, i: i, index: index, namespace: namespace, variables: variables}, cached: true %>
           <% end %>
         <% end %>
       <% else %>
