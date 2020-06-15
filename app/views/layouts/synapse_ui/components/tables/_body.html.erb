@@ -16,6 +16,6 @@
       <% end %>
     <% end %>
   <% else %>
-    <tr><td colspan="42">There's nothing here</td></tr>
+    <tr><td colspan="42"><% if empty_message %><%= empty_message %><% else %>There's nothing here<% end %></td></tr>
   <% end %>
 </tbody>

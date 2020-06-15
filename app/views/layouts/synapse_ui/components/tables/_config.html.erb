@@ -18,6 +18,7 @@
 <% data_url ||= nil %>
 <% header_classes ||= nil %>
 <% body_classes ||= nil %>
+<% empty_message ||= nil %>
 
 <% if paginate && items %>
   <% items = items.paginate(page: params[:page], per_page: per_page) %>
@@ -53,7 +54,7 @@
 <div class="table-responsive <%= wrapper_classes %>">
   <table class="table <%= table_classes %>" <% if data_controller %>data-controller="<%= data_controller %>"<% end %> <% if data_action %>data-action="<%= data_action %>"<% end %> <% if data_url %>data-url="<%= data_url %>"<% end %>>
     <%= render partial: 'layouts/synapse_ui/components/tables/header', locals: { header: header, columns: columns, variables: variables, header_classes: header_classes } %>
-    <%= render partial: 'layouts/synapse_ui/components/tables/body', locals: { columns: columns, items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, data_url: data_url, variables: variables, body_classes: body_classes } %>
+    <%= render partial: 'layouts/synapse_ui/components/tables/body', locals: { columns: columns, items: items, type: type, cache_scope: cache_scope, cache_status: cache_status, cache_expire: cache_expire, namespace: namespace, data_url: data_url, variables: variables, body_classes: body_classes, empty_message: empty_message } %>
   </table>
 </div>
 
