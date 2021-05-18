@@ -51,6 +51,43 @@
       text-decoration: none;
     }
   }
+  &.btn-bubble {
+    font-weight: bold !important;
+    background: transparent;
+    // border-radius: 25%;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 100px;
+    text-transform: none;
+    font-size: 1.2rem;
+    &.small {
+      font-size: 1rem;
+    }
+    &:hover {
+      background: $light_blue;
+      color: $blue;
+    }
+    &.no-hover {
+      &:hover {
+        background: inherit;
+        color: inherit;
+      }
+    }
+    &.active {
+      color: $blue;
+    }
+    &.blue {
+      background: $blue;
+      color: $white;
+    }
+    &.red {
+      background: $red;
+      color: $white;
+    }
+    &.gray {
+      background: $light_gray;
+    }
+  }
   &.slide {
     // Slides button text right; works well with a hidden left-hand icon
     // EXAMPLE: <a href="/contact" class="btn btn-primary slide"><i class="far fa-arrow-right revealable hide shrink-width"></i>Contact us</a>
