@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    
+
     # Create cache layer
     - uses: actions/cache@v1
       with:
@@ -25,21 +25,22 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-    
+
     # Bundler dependency
     - name: Install SQLite
       run: |
         sudo apt-get update --fix-missing
         sudo apt-get install libsqlite3-dev
-    
-    # Setting environment variables here when calculated and used in other steps    
+
+    # Setting environment variables here when calculated and used in other steps
+    # THIS IS DEPRECATED: https://github.blog/changelog/2020-10-01-github-actions-deprecating-set-env-and-add-path-commands/
     - name: Set calculated environment variables
       run: |
         GN=$(echo $GITHUB_REPOSITORY | awk -F'/' '{print $2}')
         echo "::set-env name=GEM_NAME::${GN}"
         GHO=$(echo $GITHUB_REPOSITORY | awk -F'/' '{print $1}')
-        echo "::set-env name=GH_ORG::${GHO}" 
-    
+        echo "::set-env name=GH_ORG::${GHO}"
+
     # Configurating aws cli
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -47,48 +48,48 @@ jobs:
         aws-access-key-id: ${{ secrets.DD_AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.DD_AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
-    
+
     # Getting current version from DynamoDB, setting to 0.0.1 if not previously set
     - name: Set gem name and current version
       run: |
         DYNAMO_VERSION=$(aws dynamodb get-item --table-name $DYNAMO_TABLE_NAME --key "{\"packageName\":{\"S\":\"${GEM_NAME}\"}}" --projection-expression "currentVersion" | jq -r '.Item.currentVersion.S')
         echo "::set-env name=DYNAMO_VERSION::${DYNAMO_VERSION}"
-        CURRENT_VERSION=${DYNAMO_VERSION:-0.0.1.0} 
+        CURRENT_VERSION=${DYNAMO_VERSION:-0.0.1.0}
         echo "::set-env name=CURRENT_VERSION::${CURRENT_VERSION}"
-        sed -i "s/\(VERSION = \)\(.*\)/\1'${CURRENT_VERSION}'/" lib/${GEM_NAME}/version.rb 
-    
+        sed -i "s/\(VERSION = \)\(.*\)/\1'${CURRENT_VERSION}'/" lib/${GEM_NAME}/version.rb
+
     - name: Bundle install
       run: |
         gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
-    
+
     # Run db migration on the test environment
     # COMMENTING OUT DB MIGRATION FOR THIS GEM
     # - name: Migrate database
     #   run: bundle exec rails db:migrate RAILS_NEV=test
 
-    # Specifying same bundle path as was previously cached 
+    # Specifying same bundle path as was previously cached
     # COMMENTING OUT TEST FOR THIS GEM
     # - name: Run tests
     #   run: |
     #     bundle config path vendor/bundle
     #     bundle exec rails test -v
-    
+
     # Increments the current version variable at the scale provided
     - name: Set new version environment variable
       run: |
         NEW_VERSION=$(echo $CURRENT_VERSION | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{if(length($NF+1)>length($NF))$(NF-1)++; $NF=sprintf("%0*d", length($NF), ($NF+1)%(10^length($NF))); print}')
         echo "::set-env name=NEW_VERSION::$NEW_VERSION"
-    
+
     # Locally build the gem from gemspec
     - name: Build gem locally
       run: |
-        sed -i "s/\(VERSION = \)\(.*\)/\1'${NEW_VERSION}'/" lib/${GEM_NAME}/version.rb 
+        sed -i "s/\(VERSION = \)\(.*\)/\1'${NEW_VERSION}'/" lib/${GEM_NAME}/version.rb
         gem build $GEM_NAME.gemspec
-    
+
     # Credential file is used to authenticate to GitHub Packages
-    - name: Create credential file 
+    - name: Create credential file
       run: |
         echo ":github: Bearer ${{ secrets.GITHUB_TOKEN }}" >> ~/.gem/credentials
         chmod 600 ~/.gem/credentials
